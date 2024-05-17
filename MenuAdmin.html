@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Menú Administradores</title>
+    <link rel="stylesheet" type="text/css" href="stylemunu.css">
+</head>
+<body>
+    <h1>Bienvenido Admin</h1>
+    <ul>
+        <li>
+            <a href="#">INSERTAR</a>
+            <ul>
+                <li><a href="FCentrosVerificacion.html">Centros Verificación</a></li>
+                <li><a href="FConductores.html">Conductores</a></li>
+                <li><a href="FDirecciones.html">Direcciones</a></li>
+                <li><a href="FLicencias.html">Licencias</a></li>
+                <li><a href="FMultas.html">Multas</a></li>
+                <li><a href="FOficiales.html">Oficiales</a></li>
+                <li><a href="FPropietarios.html">Propietarios</a></li>
+                <li><a href="FTarjetasCirculacion.html">Tarjetas  de Circulación</a></li>
+                <li><a href="FTenencias.html">Tenencias</a></li>
+                <li><a href="FVehiculos.html">Vehiculos</a></li>
+                <li><a href="FVerificaciones.html">Verificaciones</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">ELIMINAR</a>
+            <ul>
+                <li><a href="FDCentrosVerificacion.html">Centros Verificación</a></li>
+                <li><a href="FDConductores.html">Conductores</a></li>
+                <li><a href="FDDirecciones.html">Direcciones</a></li>
+                <li><a href="FDLicencias.html">Licencias</a></li>
+                <li><a href="FDMultas.html">Multas</a></li>
+                <li><a href="FDOficiales.html">Oficiales</a></li>
+                <li><a href="FDPropietarios.html">Propietarios</a></li>
+                <li><a href="FDTarjetasCirculacion.html">Tarjetas  de Circulación</a></li>
+                <li><a href="FDTenencias.html">Tenencias</a></li>
+                <li><a href="FDVehiculos.html">Vehiculos</a></li>
+                <li><a href="FDVerificaciones.html">Verificaciones</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">CONSULTAS</a>
+            <ul>
+                <li><a href="CCentrosVerificacion.php">Centros Verificación</a></li>
+                <li><a href="CConductores.php">Conductores</a></li>
+                <li><a href="CDirecciones.php">Direcciones</a></li>
+                <li><a href="CLicencias.php">Licencias</a></li>
+                <li><a href="CMultas.php">Multas</a></li>
+                <li><a href="COficiales.php">Oficiales</a></li>
+                <li><a href="CPropietario.php">Propietarios</a></li>
+                <li><a href="CTarjetasCirculacion.php">Tarjetas  de Circulación</a></li>
+                <li><a href="CTenencias.php">Tenencias</a></li>
+                <li><a href="CVehiculos.php">Vehiculos</a></li>
+                <li><a href="CVerificaciones.php">Verificaciones</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">ACTUALIZAR</a>
+            <ul>
+                <li><a href="FACentrosVerificacion.html">Centros Verificación</a></li>
+                <li><a href="FAConductores.html">Conductores</a></li>
+                <li><a href="FADirecciones.html">Direcciones</a></li>
+                <li><a href="FALicencias.html">Licencias</a></li>
+                <li><a href="FAMultas.html">Multas</a></li>
+                <li><a href="FAOficiales.html">Oficiales</a></li>
+                <li><a href="FAPropietarios.html">Propietarios</a></li>
+                <li><a href="FATarjetasCirculacion.html">Tarjetas  de Circulación</a></li>
+                <li><a href="FATenencias.html">Tenencias</a></li>
+                <li><a href="FAVehiculos.html">Vehiculos</a></li>
+                <li><a href="FAVerificaciones.html">Verificaciones</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">BLOQUEAR/DESBLOQUEAR USUARIO</a>
+            <ul>
+                <li>
+                    <form action="bloquear_usuario.php" method="post">
+                        <label for="username">Nombre de Usuario:</label>
+                        <input type="text" id="username" name="username">
+                        <input type="submit" value="Bloquear Usuario">
+                    </form>
+                </li>
+                <li>
+                    <form action="desbloquar_usuario.php" method="post">
+                        <label for="username">Nombre de Usuario:</label>
+                        <input type="text" id="username" name="username">
+                        <input type="submit" value="Desbloquear Usuario">
+                    </form>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">ACTIVAR/DESACTIVAR USUARIO</a>
+            <ul>
+                <li>
+                    <form action="activar_cuenta.php" method="post">
+                        <label for="username">Nombre de Usuario:</label>
+                        <input type="text" id="username" name="username">
+                        <input type="submit" value="Activar Usuario">
+                    </form>
+                </li>
+                <li>
+                    <form action="desactivar_cuenta.php" method="post">
+                        <label for="username">Nombre de Usuario:</label>
+                        <input type="text" id="username" name="username">
+                        <input type="submit" value="Desactivar Usuario">
+                    </form>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

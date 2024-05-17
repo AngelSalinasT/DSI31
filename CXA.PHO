@@ -1,0 +1,151 @@
+<?php
+require('fpdf.php');
+$tiposervicio = 'Tipo de Servicio: ' . 'Público';
+$holograma = 'Holograma: ' . '1';
+$folio = 'Folio: ' . 'B1679306';
+$folioc = 'B1679306';
+$vigencia = 'Vigencia: ' . '2026-12-31';
+$placa = 'Placa: ' . 'XYZ456';
+$rfc = 'RFC: ' . 'HIJK789012LMN';
+$numserie = 'Número de Serie: ' . '0987654321';
+$modelo = 'Modelo: ' . 'Ford Fiesta';
+$localidad = 'Localidad: ' . 'Guadalajara';
+$marcalineasublinea = 'Marca/Línea/Sublínea: ' . 'Ford';
+$operacion = 'Operación: ' . 'Irregular';
+$municipio = 'Municipio: ' . 'Zapopan';
+$placaant = 'Placa Anterior: ' . 'UVW101';
+$NCI = 'NCI: ' . '1234567890';
+$cilindraje = 'Cilindraje: ' . '1500';
+$cvvvehicular = 'CVV Vehicular: ' . '987654321';
+$fechaexpedicion = 'Fecha de Expedición: ' . '2024-04-16';
+$puertas = 'Puertas: ' . '5';
+$clase = 'Clase: ' . 'Compacto';
+$asientos = 'Asientos: ' . '4';
+$tipo = 'Tipo: ' . 'Público';
+$oficinaexpendidora = 'Oficina Expendidora: ' . '02';
+$origen = 'Origen: ' . 'Extranjero';
+$color = 'Color: ' . 'Negro';
+$combustible = 'Combustible: ' . '2';
+$transmicion = 'Transmisión: ' . 'AUT';
+$uso = 'Uso: ' . '10';
+$rpa = 'RPA: ' . '1234567890';
+$movimiento = 'Movimiento: ' . 'Cambio de Propietario';
+$nummotor = 'Número de Motor: ' . 'ABCDEFG123456';
+$fabricacion = 'HECHO EN MÉXICO';
+
+$pdf = new FPDF('L', 'mm', array(90, 54));
+$pdf->AddPage();
+$pdf->SetFont('Arial', '', 5);
+
+$pdf->SetXY(5, 5);
+$pdf->Image('logoPro.jpg', 0, 0, 20, 10);
+
+$pdf->SetXY(25, 2);
+$pdf->SetFont('Arial', 'B', 4);
+$pdf->Cell(0, 0, utf8_decode('TARJETA DE CIRCULACIÓN'), 0, 1);
+
+$pdf->SetXY(2, 10);
+$pdf->Cell(0, 0, utf8_decode($tiposervicio), 0, 1);
+
+$pdf->SetXY(25, 10);
+$pdf->Cell(0, 0, utf8_decode($holograma), 0, 1);
+
+$pdf->SetXY(40, 10);
+$pdf->Cell(0, 0, utf8_decode($folio), 0, 1);
+
+$pdf->SetXY(55, 10);
+$pdf->Cell(0, 0, utf8_decode($vigencia), 0, 1);
+
+$pdf->SetXY(75, 10);
+$pdf->Cell(0, 0, utf8_decode($placa), 0, 1);
+
+$pdf->SetXY(2, 15);
+$pdf->Cell(0, 0, utf8_decode($rfc), 0, 1);
+
+$pdf->SetXY(25, 15);
+$pdf->Cell(0, 0, utf8_decode($numserie), 0, 1);
+
+$pdf->SetXY(55, 15);
+$pdf->Cell(0, 0, utf8_decode($modelo), 0, 1);
+
+$pdf->SetXY(2, 20);
+$pdf->Cell(0, 0, utf8_decode($localidad), 0, 1);
+
+$pdf->SetXY(25, 20);
+$pdf->Cell(0, 0, utf8_decode($marcalineasublinea), 0, 1);
+
+$pdf->SetXY(55, 20);
+$pdf->Cell(0, 0, utf8_decode($operacion), 0, 1);
+
+$pdf->SetXY(2, 25);
+$pdf->Cell(0, 0, utf8_decode($municipio), 0, 1);
+
+$pdf->SetXY(55, 25);
+$pdf->Cell(0, 0, utf8_decode($folio), 0, 1);
+
+$pdf->SetXY(25, 27);
+$pdf->Cell(0, 0, utf8_decode($cilindraje), 0, 1);
+
+
+$pdf->SetXY(55, 30);
+$pdf->Cell(0, 0, utf8_decode($placaant), 0, 1);
+
+$pdf->SetXY(5, 33);
+$pdf->Cell(0, 0, utf8_decode($NCI), 0, 1);
+
+$pdf->SetXY(50, 33);
+$pdf->Cell(0, 0, utf8_decode($cvvvehicular), 0, 1);
+
+$pdf->SetXY(70, 33);
+$pdf->Cell(0, 0, utf8_decode($fechaexpedicion), 0, 1);
+
+$pdf->SetXY(35, 40);
+$pdf->Cell(0, 0, utf8_decode($puertas), 0, 1);
+
+$pdf->SetXY(50, 40);
+$pdf->Cell(0, 0, utf8_decode($clase), 0, 1);
+
+$pdf->SetXY(70, 40);
+$pdf->Cell(0, 0, utf8_decode($oficinaexpendidora), 0, 1);
+
+$pdf->SetXY(5, 45);
+$pdf->Cell(0, 0, utf8_decode($origen), 0, 1);
+
+$pdf->SetXY(35, 45);
+$pdf->Cell(0, 0, utf8_decode($asientos), 0, 1);
+
+$pdf->SetXY(50, 45);
+$pdf->Cell(0, 0, utf8_decode($tipo), 0, 1);
+
+$pdf->SetXY(70, 45);
+$pdf->Cell(0, 0, utf8_decode($movimiento), 0, 1);
+
+$pdf->SetXY(35, 50);
+$pdf->Cell(0, 0, utf8_decode($combustible), 0, 1);
+
+$pdf->SetXY(50, 50);
+$pdf->Cell(0, 0, utf8_decode($uso), 0, 1);
+
+$pdf->SetXY(5, 55);
+$pdf->Cell(0, 0, utf8_decode($color), 0, 1);
+
+$pdf->SetXY(35, 55);
+$pdf->Cell(0, 0, utf8_decode($transmicion), 0, 1);
+
+$pdf->SetXY(50, 55);
+$pdf->Cell(0, 0, utf8_decode($rpa), 0, 1);
+
+$pdf->SetXY(70, 55);
+$pdf->Cell(0, 0, utf8_decode($nummotor), 0, 1);
+
+$pdf->SetXY(70, 62);
+$pdf->Cell(0, 0, utf8_decode($fabricacion), 0, 1);
+
+$pdf->SetXY(80, 70);
+$pdf->Cell(0,0, utf8_decode($folioc), 0, 1);
+
+
+$pdf->Output('I', 'TarjetaCirculacion.pdf');
+
+
+?>

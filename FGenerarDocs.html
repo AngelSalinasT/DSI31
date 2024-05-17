@@ -1,0 +1,61 @@
+<html>
+    <meta charset="UTF-8">
+    <form method="post">
+        <h1>GENERAR DOCUMENTO</h1>
+        <p>Seleccione el tipo de documento:</p>
+        <input type="radio" id="licencia" name="documento" value="licencia" onclick="changeAction('generarLicencia.php')">
+        <label for="licencia">Licencia</label><br>
+        <input type="radio" id="verificacion" name="documento" value="verificacion" onclick="changeAction('generarTVerificacion.php')">
+        <label for="verificacion">Verificación</label><br>
+        <input type="radio" id="circulacion" name="documento" value="circulacion" onclick="changeAction('generarTCirculacion.php')">
+        <label for="circulacion">Tarjeta de Circulación</label><br>
+    </form>
+    
+    <form method="post" action="generarLicencia.php" id="form-licencia" style="display: none;">
+        <h1>GENERAR LICENCIA</h1>
+        <label>Inserte el folio: </label>
+        <input type="text" name="ID" id="ID">
+        <input type="submit">
+    </form>
+
+    <form method="post" action="generarTVerificacion.php" id="form-verificacion" style="display: none;">
+        <h1>GENERAR VERIFICACIÓN</h1>
+        <label>Inserte el folio: </label>
+        <input type="text" name="ID" id="ID">
+        <input type="submit">
+    </form>
+
+    <form method="post" action="generarTCirculacion.php" id="form-circulacion" style="display: none;">
+        <h1>GENERAR TARJETA DE CIRCULACIÓN</h1>
+        <label>Inserte el folio: </label>
+        <input type="text" name="ID" id="ID">
+        <input type="submit">
+    </form>
+
+    <script>
+        function changeAction(action) {
+            var formLicencia = document.getElementById("form-licencia");
+            var formVerificacion = document.getElementById("form-verificacion");
+            var formCirculacion = document.getElementById("form-circulacion");
+
+            switch (action) {
+                case 'generarLicencia.php':
+                    formLicencia.style.display = "block";
+                    formVerificacion.style.display = "none";
+                    formCirculacion.style.display = "none";
+                    break;
+                case 'generarTVerificacion.php':
+                    formLicencia.style.display = "none";
+                    formVerificacion.style.display = "block";
+                    formCirculacion.style.display = "none";
+                    break;
+                case 'generarTCirculacion.php':
+                    formLicencia.style.display = "none";
+                    formVerificacion.style.display = "none";
+                    formCirculacion.style.display = "block";
+                    break;
+            }
+        }
+    </script>
+</html>
+
