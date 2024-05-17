@@ -1,5 +1,5 @@
 <?php
-include("controlador.php");
+include("../controlador/controlador.php");
 
 $usuario = $_POST['username']; 
 
