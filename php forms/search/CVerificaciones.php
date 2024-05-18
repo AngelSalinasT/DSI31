@@ -3,28 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulario</title>
+    <link rel="stylesheet" type="text/css" href="../../css/styles.css">
 </head>
-<h1>Verificaciones</h1> 
-    <form action="CVerificaciones.php">
-    <label>Valor</label>
-    <input type="text" name="Valor" id="Valor">
-    <br>
-    <label>Atributo</label>
-    <input type="radio" name="Atributo" id="Atributo" value="FOLIO" checked>FOLIO
-    <input type="radio" name="Atributo" id="Atributo" value="FECHA">FECHA
-    <input type="radio" name="Atributo" id="Atributo" value="DICTAMEN">DICTAMEN
-    <input type="radio" name="Atributo" id="Atributo" value="TECNICO">TECNICO
-    <input type="radio" name="Atributo" id="Atributo" value="HORAENTRADA">HORAENTRADA
-    <input type="radio" name="Atributo" id="Atributo" value="HORASALIDA">HORASALIDA
-    <input type="radio" name="Atributo" id="Atributo" value="FOLIOPRUEBA">FOLIOPRUEBA
-    <input type="radio" name="Atributo" id="Atributo" value="VIGENCIA">VIGENCIA
-    <input type="radio" name="Atributo" id="Atributo" value="SEMESTRE">SEMESTRE
-    <input type="radio" name="Atributo" id="Atributo" value="TIPO">TIPO
-    <input type="radio" name="Atributo" id="Atributo" value="CENTROVERIFICACION">CENTROVERIFICACION
-    <input type="radio" name="Atributo" id="Atributo" value="TARJETACIRCULACION">TARJETACIRCULACION
-    <br><br>
-    <input type="submit" value="Evaluar">
-    </form>
+<body>
+    <div class="container">
+        <h1>Verificaciones</h1> 
+        <form action="CVerificaciones.php">
+            <label>Valor</label>
+            <input type="text" name="Valor" id="Valor">
+            <br>
+            <label>Atributo</label>
+            <input type="radio" name="Atributo" id="Atributo" value="FOLIO" checked>FOLIO
+            <input type="radio" name="Atributo" id="Atributo" value="FECHA">FECHA
+            <input type="radio" name="Atributo" id="Atributo" value="DICTAMEN">DICTAMEN
+            <input type="radio" name="Atributo" id="Atributo" value="TECNICO">TECNICO
+            <input type="radio" name="Atributo" id="Atributo" value="HORAENTRADA">HORAENTRADA
+            <input type="radio" name="Atributo" id="Atributo" value="HORASALIDA">HORASALIDA
+            <input type="radio" name="Atributo" id="Atributo" value="FOLIOPRUEBA">FOLIOPRUEBA
+            <input type="radio" name="Atributo" id="Atributo" value="VIGENCIA">VIGENCIA
+            <input type="radio" name="Atributo" id="Atributo" value="SEMESTRE">SEMESTRE
+            <input type="radio" name="Atributo" id="Atributo" value="TIPO">TIPO
+            <input type="radio" name="Atributo" id="Atributo" value="CENTROVERIFICACION">CENTROVERIFICACION
+            <input type="radio" name="Atributo" id="Atributo" value="TARJETACIRCULACION">TARJETACIRCULACION
+            <br><br>
+            <button type="submit" value="Evaluar">Buscar</button>
+        </form>
+    </div>
+</body>
+
 </html>
 
 <?php

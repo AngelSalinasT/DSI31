@@ -3,23 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulario</title>
+    <link rel="stylesheet" type="text/css" href="../../css/styles.css">
 </head>
-<h1>Direcciones</h1> 
-    <form action="CDirecciones.php">
-    <label>Valor</label>
-    <input type="text" name="Valor" id="Valor">
-    <br>
-    <label>Atributo</label>
-    <input type="radio" name="Atributo" id="Atributo" value="ID" checked>ID
-    <input type="radio" name="Atributo" id="Atributo" value="CALLE">CALLE
-    <input type="radio" name="Atributo" id="Atributo" value="NUMERO">NUMERO
-    <input type="radio" name="Atributo" id="Atributo" value="COLONIA">COLONIA
-    <input type="radio" name="Atributo" id="Atributo" value="MUNICIPIO">MUNICIPIO
-    <input type="radio" name="Atributo" id="Atributo" value="CODIGOPOSTAL">CODIGOPOSTAL
-    <input type="radio" name="Atributo" id="Atributo" value="ESTADO">ESTADO
-    <br><br>
-    <input type="submit" value="Evaluar">
+<body>
+    <div class="container">
+        <h1>Direcciones</h1> 
+        <form action="CDirecciones.php">
+        <label>Valor</label>
+        <input type="text" name="Valor" id="Valor">
+        <br>
+        <label>Atributo</label>
+        <input type="radio" name="Atributo" id="Atributo" value="ID" checked>ID
+        <input type="radio" name="Atributo" id="Atributo" value="CALLE">CALLE
+        <input type="radio" name="Atributo" id="Atributo" value="NUMERO">NUMERO
+        <input type="radio" name="Atributo" id="Atributo" value="COLONIA">COLONIA
+        <input type="radio" name="Atributo" id="Atributo" value="MUNICIPIO">MUNICIPIO
+        <input type="radio" name="Atributo" id="Atributo" value="CODIGOPOSTAL">CODIGOPOSTAL
+        <input type="radio" name="Atributo" id="Atributo" value="ESTADO">ESTADO
+        <br><br>
+        <button type="submit" value="Evaluar">Buscar</button>
     </form>
+    </div>
+</body>
+
 </html>
 
 <?php

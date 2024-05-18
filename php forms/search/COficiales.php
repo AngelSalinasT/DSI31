@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulario</title>
+    <link rel="stylesheet" type="text/css" href="../../css/styles.css">
 </head>
-<h1>Ofciales</h1> 
-<html>
-    <form action="COficiales.php">
-    <label>Valor</label>
-    <input type="text" name="Valor" id="Valor">
-    <br>
-    <label>Atributo</label>
-    <input type="radio" name="Atributo" id="Atributo" value="ID" checked>ID
-    <input type="radio" name="Atributo" id="Atributo" value="NOMBRE">NOMBRE
-    <input type="radio" name="Atributo" id="Atributo" value="APELLIDOS">APELLIDOS
-    <input type="radio" name="Atributo" id="Atributo" value="FIRMA">FIRMA
-    <input type="radio" name="Atributo" id="Atributo" value="REGION">REGION
-    <br><br>
-    <input type="submit" value="Evaluar">
-    </form>
+
+    <body>
+        <div class="container">
+            <h1>Ofciales</h1> 
+            <form action="COficiales.php">
+            <label>Valor</label>
+            <input type="text" name="Valor" id="Valor">
+            <br>
+            <label>Atributo</label>
+            <input type="radio" name="Atributo" id="Atributo" value="ID" checked>ID
+            <input type="radio" name="Atributo" id="Atributo" value="NOMBRE">NOMBRE
+            <input type="radio" name="Atributo" id="Atributo" value="APELLIDOS">APELLIDOS
+            <input type="radio" name="Atributo" id="Atributo" value="FIRMA">FIRMA
+            <input type="radio" name="Atributo" id="Atributo" value="REGION">REGION
+            <br><br>
+            <button type="submit" value="Evaluar">Buscar</button>
+            </form>
+        </div>
+    </body>
 </html>
 
 <?php

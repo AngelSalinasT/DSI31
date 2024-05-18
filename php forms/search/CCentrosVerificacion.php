@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulario de Centros de Verificación</title>
+    <link rel="stylesheet" type="text/css" href="../../css/styles.css">
 </head>
-<h1>Centros de Verificación</h1>  
+<body>
+    <div class="container">
+    <h1>Centros de Verificación</h1>  
     <form action="CCentrosVerificacion.php">
     <label>Valor</label>
     <input type="text" name="Valor" id="Valor">
@@ -15,8 +18,10 @@
     <input type="radio" name="Atributo" id="Atributo" value="DIRECCION">DIRECCION
     <input type="radio" name="Atributo" id="Atributo" value="TELEFONO">TELEFONO
     <br><br>
-    <input type="submit" value="Evaluar">
+    <button type="submit" value="Evaluar">Buscar</button>
     </form>
+    </div>
+</body>
 </html>
 
 <?php

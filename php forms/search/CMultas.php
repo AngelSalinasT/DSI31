@@ -3,32 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulario</title>
+    <link rel="stylesheet" type="text/css" href="../../css/styles.css">
 </head>
-<h1>Multas</h1> 
-    <form action="CMultas.php">
-    <label>Valor</label>
-    <input type="text" name="Valor" id="Valor">
-    <br>
-    <label>Atributo</label>
-    <input type="radio" name="Atributo" id="Atributo" value="FOLIO" checked>FOLIO
-    <input type="radio" name="Atributo" id="Atributo" value="FECHA">FECHA
-    <input type="radio" name="Atributo" id="Atributo" value="REPORTESECCION">REPORTESECCION
-    <input type="radio" name="Atributo" id="Atributo" value="FUNDAMENTO">FUNDAMENTO
-    <input type="radio" name="Atributo" id="Atributo" value="MOTIVO">MOTIVO
-    <input type="radio" name="Atributo" id="Atributo" value="GARANTIARETENIDA">GARANTIARETENIDA
-    <input type="radio" name="Atributo" id="Atributo" value="NOPARTEACCIDENTE">NOPARTEACCIDENTE
-    <input type="radio" name="Atributo" id="Atributo" value="CONVENIO">CONVENIO
-    <input type="radio" name="Atributo" id="Atributo" value="PUESTODISPOSICION">PUESTODISPOSICION
-    <input type="radio" name="Atributo" id="Atributo" value="DEPOSITOOFICIAL">DEPOSITOOFICIAL
-    <input type="radio" name="Atributo" id="Atributo" value="OBSERVAOPERATICO">OBSERVAOPERATICO
-    <input type="radio" name="Atributo" id="Atributo" value="OBSERVACONDUCTOR">OBSERVACONDUCTOR
-    <input type="radio" name="Atributo" id="Atributo" value="CALIFICACIONBOLETA">CALIFICACIONBOLETA
-    <input type="radio" name="Atributo" id="Atributo" value="NOLICENCIA">NOLICENCIA
-    <input type="radio" name="Atributo" id="Atributo" value="OFICIALES">OFICIALES
-    <input type="radio" name="Atributo" id="Atributo" value="TARJETACIRCULACION">TARJETACIRCULACION
-    <br><br>
-    <input type="submit" value="Evaluar">
-    </form>
+<body>
+    <div class="container">
+        <h1>Multas</h1> 
+        <form action="CMultas.php">
+        <label>Valor</label>
+        <input type="text" name="Valor" id="Valor">
+        <br>
+        <label>Atributo</label>
+        <input type="radio" name="Atributo" id="Atributo" value="FOLIO" checked>FOLIO
+        <input type="radio" name="Atributo" id="Atributo" value="FECHA">FECHA
+        <input type="radio" name="Atributo" id="Atributo" value="REPORTESECCION">REPORTESECCION
+        <input type="radio" name="Atributo" id="Atributo" value="FUNDAMENTO">FUNDAMENTO
+        <input type="radio" name="Atributo" id="Atributo" value="MOTIVO">MOTIVO
+        <input type="radio" name="Atributo" id="Atributo" value="GARANTIARETENIDA">GARANTIARETENIDA
+        <input type="radio" name="Atributo" id="Atributo" value="NOPARTEACCIDENTE">NOPARTEACCIDENTE
+        <input type="radio" name="Atributo" id="Atributo" value="CONVENIO">CONVENIO
+        <input type="radio" name="Atributo" id="Atributo" value="PUESTODISPOSICION">PUESTODISPOSICION
+        <input type="radio" name="Atributo" id="Atributo" value="DEPOSITOOFICIAL">DEPOSITOOFICIAL
+        <input type="radio" name="Atributo" id="Atributo" value="OBSERVAOPERATICO">OBSERVAOPERATICO
+        <input type="radio" name="Atributo" id="Atributo" value="OBSERVACONDUCTOR">OBSERVACONDUCTOR
+        <input type="radio" name="Atributo" id="Atributo" value="CALIFICACIONBOLETA">CALIFICACIONBOLETA
+        <input type="radio" name="Atributo" id="Atributo" value="NOLICENCIA">NOLICENCIA
+        <input type="radio" name="Atributo" id="Atributo" value="OFICIALES">OFICIALES
+        <input type="radio" name="Atributo" id="Atributo" value="TARJETACIRCULACION">TARJETACIRCULACION
+        <br><br>
+        <button type="submit" value="Evaluar">Buscar</button>
+        </form>
+    </div>
+</body>
 </html>
 
 <?php

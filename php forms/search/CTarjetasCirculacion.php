@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulario</title>
+    <link rel="stylesheet" type="text/css" href="../../css/styles.css">
 </head>
-<h1>Tarjetas de Circulación</h1> 
-<html>
-    <form action="CTarjetasCirculacion.php">
-    <label>Valor</label>
-    <input type="text" name="Valor" id="Valor">
-    <br>
-    <label>Atributo</label>
-    <input type="radio" name="Atributo" id="Atributo" value="FOLIO" checked>FOLIO
-    <input type="radio" name="Atributo" id="Atributo" value="VIGENCIA">VIGENCIA
-    <input type="radio" name="Atributo" id="Atributo" value="FECHAEXPEDICION">FECHAEXPEDICION
-    <input type="radio" name="Atributo" id="Atributo" value="MOVIMIENTO">MOVIMIENTO
-    <input type="radio" name="Atributo" id="Atributo" value="TIPOSERVICIO">TIPOSERVICIO
-    <input type="radio" name="Atributo" id="Atributo" value="VEHICULO">VEHICULO
-    <input type="radio" name="Atributo" id="Atributo" value="PROPIETARIO">PROPIETARIO
-    <br><br>
-    <input type="submit" value="Evaluar">
+
+    <body>
+        <div class="container">
+        <h1>Tarjetas de Circulación</h1> 
+        <form action="CTarjetasCirculacion.php">
+        <label>Valor</label>
+        <input type="text" name="Valor" id="Valor">
+        <br>
+        <label>Atributo</label>
+        <input type="radio" name="Atributo" id="Atributo" value="FOLIO" checked>FOLIO
+        <input type="radio" name="Atributo" id="Atributo" value="VIGENCIA">VIGENCIA
+        <input type="radio" name="Atributo" id="Atributo" value="FECHAEXPEDICION">FECHAEXPEDICION
+        <input type="radio" name="Atributo" id="Atributo" value="MOVIMIENTO">MOVIMIENTO
+        <input type="radio" name="Atributo" id="Atributo" value="TIPOSERVICIO">TIPOSERVICIO
+        <input type="radio" name="Atributo" id="Atributo" value="VEHICULO">VEHICULO
+        <input type="radio" name="Atributo" id="Atributo" value="PROPIETARIO">PROPIETARIO
+        <br><br>
+        <button type="submit" value="Evaluar">Buscar</button>
     </form>
+        </div>
+    </body>
 </html>
 
 <?php

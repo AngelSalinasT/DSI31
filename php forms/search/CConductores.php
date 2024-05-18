@@ -3,27 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulario</title>
+    <link rel="stylesheet" type="text/css" href="../../css/styles.css">
 </head>
-<h1>Conductores</h1>  
-    <form action="CConductores.php">
-    <label>Valor</label>
-    <input type="text" name="Valor" id="Valor">
-    <br>
-    <label>Atributo</label>
-    <input type="radio" name="Atributo" id="Atributo" value="ID" checked>ID
-    <input type="radio" name="Atributo" id="Atributo" value="NOMBRE">NOMBRE
-    <input type="radio" name="Atributo" id="Atributo" value="APELLIDOS">APELLIDOS
-    <input type="radio" name="Atributo" id="Atributo" value="CURP">CURP
-    <input type="radio" name="Atributo" id="Atributo" value="TELEFONO">TELEFONO
-    <input type="radio" name="Atributo" id="Atributo" value="CORREO">CORREO
-    <input type="radio" name="Atributo" id="Atributo" value="RFC">RFC
-    <input type="radio" name="Atributo" id="Atributo" value="TIPOSANGRE">TIPOSANGRE
-    <input type="radio" name="Atributo" id="Atributo" value="DONADORACTIVO">DONADORACTIVO
-    <input type="radio" name="Atributo" id="Atributo" value="NUMEMER">NUMEMER
-    <input type="radio" name="Atributo" id="Atributo" value="DIRECCION">DIRECCION
-    <br><br>
-    <input type="submit" value="Evaluar">
-    </form>
+<body>
+     <div class="container">
+        <h1>Conductores</h1>  
+        <form action="CConductores.php">
+        <label>Valor</label>
+        <input type="text" name="Valor" id="Valor">
+        <br>
+        <label>Atributo</label>
+        <input type="radio" name="Atributo" id="Atributo" value="ID" checked>ID
+        <input type="radio" name="Atributo" id="Atributo" value="NOMBRE">NOMBRE
+        <input type="radio" name="Atributo" id="Atributo" value="APELLIDOS">APELLIDOS
+        <input type="radio" name="Atributo" id="Atributo" value="CURP">CURP
+        <input type="radio" name="Atributo" id="Atributo" value="TELEFONO">TELEFONO
+        <input type="radio" name="Atributo" id="Atributo" value="CORREO">CORREO
+        <input type="radio" name="Atributo" id="Atributo" value="RFC">RFC
+        <input type="radio" name="Atributo" id="Atributo" value="TIPOSANGRE">TIPOSANGRE
+        <input type="radio" name="Atributo" id="Atributo" value="DONADORACTIVO">DONADORACTIVO
+        <input type="radio" name="Atributo" id="Atributo" value="NUMEMER">NUMEMER
+        <input type="radio" name="Atributo" id="Atributo" value="DIRECCION">DIRECCION
+        <br><br>
+        <button type="submit" value="Evaluar">Buscar</button>
+        </form>
+     </div>
+</body>
 </html>
 
 <?php

@@ -3,25 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulario</title>
+    <link rel="stylesheet" type="text/css" href="../../css/styles.css">
 </head>
-<h1>Tenencias</h1> 
-    <form action="CTenencias.php">
-    <label>Valor</label>
-    <input type="text" name="Valor" id="Valor">
-    <br>
-    <label>Atributo</label>
-    <input type="radio" name="Atributo" id="Atributo" value="FOLIO" checked>FOLIO
-    <input type="radio" name="Atributo" id="Atributo" value="CAPTURAPAGO">CAPTURAPAGO
-    <input type="radio" name="Atributo" id="Atributo" value="FECHALIMITE">FECHALIMITE
-    <input type="radio" name="Atributo" id="Atributo" value="IMPORTE">IMPORTE
-    <input type="radio" name="Atributo" id="Atributo" value="TIPOPAGO">TIPOPAGO
-    <input type="radio" name="Atributo" id="Atributo" value="FECHAACTUAL">FECHAACTUAL
-    <input type="radio" name="Atributo" id="Atributo" value="HORA">HORA
-    <input type="radio" name="Atributo" id="Atributo" value="LINEACAPTURA">LINEACAPTURA
-    <input type="radio" name="Atributo" id="Atributo" value="TARJETACIRCULACION">TARJETACIRCULACION
-    <br><br>
-    <input type="submit" value="Evaluar">
-    </form>
+<body>
+    <div class="container">
+        <h1>Tenencias</h1> 
+        <form action="CTenencias.php">
+        <label>Valor</label>
+        <input type="text" name="Valor" id="Valor">
+        <br>
+        <label>Atributo</label>
+        <input type="radio" name="Atributo" id="Atributo" value="FOLIO" checked>FOLIO
+        <input type="radio" name="Atributo" id="Atributo" value="CAPTURAPAGO">CAPTURAPAGO
+        <input type="radio" name="Atributo" id="Atributo" value="FECHALIMITE">FECHALIMITE
+        <input type="radio" name="Atributo" id="Atributo" value="IMPORTE">IMPORTE
+        <input type="radio" name="Atributo" id="Atributo" value="TIPOPAGO">TIPOPAGO
+        <input type="radio" name="Atributo" id="Atributo" value="FECHAACTUAL">FECHAACTUAL
+        <input type="radio" name="Atributo" id="Atributo" value="HORA">HORA
+        <input type="radio" name="Atributo" id="Atributo" value="LINEACAPTURA">LINEACAPTURA
+        <input type="radio" name="Atributo" id="Atributo" value="TARJETACIRCULACION">TARJETACIRCULACION
+        <br><br>
+        <button type="submit" value="Evaluar">Buscar</button>
+        </form>
+    </div>
+</body>
 </html>
 
 <?php
