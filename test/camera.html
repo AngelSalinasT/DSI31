@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Captura de Foto</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+</head>
+<body>
+    <body>
+        <div class="container">
+            <h2>Subir o tomar foto</h2>
+
+            <form id="uploadForm" enctype="multipart/form-data">
+                <input type="radio" id="uploadOption" name="photoOption" value="upload" checked>
+                <label for="uploadOption">Subir archivo</label><br>
+                <input type="radio" id="cameraOption" name="photoOption" value="camera">
+                <label for="cameraOption">Tomar foto</label><br><br>
+                
+                <input type="file" id="fileInput" name="fileInput"><br><br>
+                
+                <video id="camera" width="400" height="300" autoplay></video><br>
+                <canvas id="canvas" width="400" height="300"></canvas><br>
+                
+                <img id="preview" src="" alt="Vista previa"><br><br>
+                
+                <button type="submit">Enviar</button>
+            </form>
+            <script src="app.js"></script>
+        </div>   
+
+</body>
+</html>
+
