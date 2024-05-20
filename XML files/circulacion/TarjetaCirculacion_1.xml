@@ -31,9 +31,5 @@
     <Movimiento>VENDER</Movimiento>
     <NumeroMotor>552245</NumeroMotor>
     <Fabricacion>HECHO EN MÉXICO</Fabricacion>
-<<<<<<< HEAD:XML files/circulacion/TarjetaCirculacion_1.xml
-    <FechaGeneracion>2024-05-20 07:39:56</FechaGeneracion>
-=======
-    <FechaGeneracion>2024-05-20 07:28:08</FechaGeneracion>
->>>>>>> 3cbcf6aa835e5ce0b3c7d5cd236cfdedc0ed1096:XML files/verificacion/TarjetaCirculacion_1.xml
+    <FechaGeneracion>2024-05-20 08:20:51</FechaGeneracion>
 </TarjetaCirculacion>
