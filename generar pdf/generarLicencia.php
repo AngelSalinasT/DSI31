@@ -20,6 +20,8 @@ $FilaD = mysqli_fetch_row($ResultSet2);
 
 Desconectar($Con);
 
+// jaja si se guardo mi cambio xxddxdxdx
+
 function generarXML($id, $fila, $filaD) {
     $fechaGeneracion = date('Y-m-d H:i:s');
 
