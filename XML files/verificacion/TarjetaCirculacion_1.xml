@@ -1,0 +1,35 @@
+
+<TarjetaCirculacion>
+    <TipoServicio>PARTICULAR</TipoServicio>
+    <Holograma>ESTAMPA</Holograma>
+    <Folio>127</Folio>
+    <Vigencia>2024-05-01</Vigencia>
+    <Placa>DASDAS4</Placa>
+    <RFC>PAOPISTA45755</RFC>
+    <NumeroSerie>4566R</NumeroSerie>
+    <Modelo>2014</Modelo>
+    <Localidad>2</Localidad>
+    <MarcaLineaSublinea>VW GOL</MarcaLineaSublinea>
+    <Operacion>2018/264656</Operacion>
+    <Municipio>SAN JUAN DEL RIO</Municipio>
+    <PlacaAnterior>FDASF</PlacaAnterior>
+    <NCI>2</NCI>
+    <Cilindraje>4</Cilindraje>
+    <CVVVehicular>4566R</CVVVehicular>
+    <FechaExpedicion>2024-04-02</FechaExpedicion>
+    <Puertas>4</Puertas>
+    <Clase>SEDAN</Clase>
+    <Asientos>4</Asientos>
+    <Tipo>4</Tipo>
+    <OficinaExpendidora>1</OficinaExpendidora>
+    <Origen>EXTRANJERO</Origen>
+    <Color>VERDE</Color>
+    <Combustible>0</Combustible>
+    <Transmision>4</Transmision>
+    <Uso>4</Uso>
+    <RPA>45</RPA>
+    <Movimiento>VENDER</Movimiento>
+    <NumeroMotor>552245</NumeroMotor>
+    <Fabricacion>HECHO EN MÉXICO</Fabricacion>
+    <FechaGeneracion>2024-05-20 07:07:15</FechaGeneracion>
+</TarjetaCirculacion>

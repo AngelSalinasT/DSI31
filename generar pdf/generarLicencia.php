@@ -1,7 +1,7 @@
 <?php
 require('../librerias/fpdf.php');
-include("../controlador/controlador.php");
-$Id = $_POST['ID'];
+include('../controlador/controlador.php');
+$Id = 1;
 
 $Con = Conectar();
 
@@ -40,7 +40,7 @@ function generarXML($id, $fila, $filaD) {
     $xmlContent .= "    <FechaGeneracion>{$fechaGeneracion}</FechaGeneracion>\n";
     $xmlContent .= "</Licencia>";
 
-    $xmlFileName = 'Licencia_' . $id . '.xml';
+    $xmlFileName = '../XML files/licencia/' .'Licencia_' . $id . '.xml';
     $fileHandle = fopen($xmlFileName, 'a');
 
     if ($fileHandle) {
@@ -61,7 +61,7 @@ try {
 $pdf = new FPDF('P', 'mm', array(54, 90));
 $pdf->AddPage();
 
-$pdf->Image("pieCredencial.png", 2, 0, 40, 10);
+$pdf->Image("../images/pieCredencial.png", 2, 0, 40, 10);
 
 $pdf->SetXY(16, 23); 
 $pdf->SetFont('Arial', 'I', 4);
@@ -74,7 +74,7 @@ $pdf->SetXY(8, 27);
 $pdf->SetFont('Arial', 'B', 5);
 $pdf->Cell(0, 5, 'CHOFER PARTICULAR', 0, 1);
 
-$pdf->Image("messi.jpg", 29, 11, 22, 30);
+$pdf->Image("../images/messi.jpg", 29, 11, 22, 30);
 
 
 $pdf->SetXY(44, 40); 
@@ -122,9 +122,9 @@ $pdf->SetXY(8, 64);
 $pdf->SetFont('Arial', 'I', 4);
 $pdf->Cell(0, 5, 'Firma:', 0, 1);
 
-$pdf->Image("Firma_de_Lionel_Messi.png",6,68,6,6);
+$pdf->Image("../images/Firma_de_Lionel_Messi.png",6,68,6,6);
 //$pdf->Cell(0, 5, $Fila[12], 0, 1);
-$pdf->Image("Autorizo.png",4,75,14,6);
+$pdf->Image("../images/Autorizo.png",4,75,14,6);
 
 $pdf->SetXY(38, 60); 
 $pdf->SetFont('Arial', '', 5);
@@ -142,15 +142,15 @@ $pdf->SetXY(30, 52);
 $pdf->SetFont('Arial', 'B', 4);
 $pdf->Cell(0, 5, $Fila[11], 0, 1);
 
-$pdf->Image("banner.png",0,84,54,3);
+$pdf->Image("../images/banner.png",0,84,54,3);
 
 $pdf->AddPage();
 
-$pdf->Image("qr.png", 4, 6, 20, 20);
+$pdf->Image("../images/qr.png", 4, 6, 20, 20);
 
-$pdf->Image("911.jpg", 30, 1, 10, 8);
+$pdf->Image("../images/911.jpg", 30, 1, 10, 8);
 
-$pdf->Image("089.jpg", 39, 1, 10, 8);
+$pdf->Image("../images/089.jpg", 39, 1, 10, 8);
 
 $pdf->SetXY(40, 9); 
 $pdf->SetFont('Arial', '', 5);
@@ -202,11 +202,11 @@ $pdf->SetXY(3, 27);
 $pdf->SetFont('Arial', '', 4);
 $pdf->Cell(0, 5, '', 0, 1,'L');
 
-$pdf->Image("leyes.png",4,58,45,7);
+$pdf->Image("../images/leyes.png",4,58,45,7);
 
-$pdf->Image("secre.png",8,70,40,9);
+$pdf->Image("../images/secre.png",8,70,40,9);
 
-$pdf->Image("banner.png",0,84,54,3);
+$pdf->Image("../images/banner.png",0,84,54,3);
 
 $pdf->Output('I', 'Licencia.pdf');
 ?>

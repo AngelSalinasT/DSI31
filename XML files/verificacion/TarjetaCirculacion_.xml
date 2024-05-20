@@ -1,0 +1,69 @@
+
+<TarjetaCirculacion>
+    <TipoServicio></TipoServicio>
+    <Holograma>ESTAMPA</Holograma>
+    <Folio></Folio>
+    <Vigencia></Vigencia>
+    <Placa></Placa>
+    <RFC></RFC>
+    <NumeroSerie></NumeroSerie>
+    <Modelo></Modelo>
+    <Localidad></Localidad>
+    <MarcaLineaSublinea></MarcaLineaSublinea>
+    <Operacion></Operacion>
+    <Municipio></Municipio>
+    <PlacaAnterior></PlacaAnterior>
+    <NCI></NCI>
+    <Cilindraje></Cilindraje>
+    <CVVVehicular></CVVVehicular>
+    <FechaExpedicion></FechaExpedicion>
+    <Puertas></Puertas>
+    <Clase></Clase>
+    <Asientos></Asientos>
+    <Tipo></Tipo>
+    <OficinaExpendidora></OficinaExpendidora>
+    <Origen></Origen>
+    <Color></Color>
+    <Combustible></Combustible>
+    <Transmision></Transmision>
+    <Uso></Uso>
+    <RPA></RPA>
+    <Movimiento></Movimiento>
+    <NumeroMotor></NumeroMotor>
+    <Fabricacion>HECHO EN MÉXICO</Fabricacion>
+    <FechaGeneracion>2024-05-20 06:03:48</FechaGeneracion>
+</TarjetaCirculacion>
+<TarjetaCirculacion>
+    <TipoServicio></TipoServicio>
+    <Holograma>ESTAMPA</Holograma>
+    <Folio></Folio>
+    <Vigencia></Vigencia>
+    <Placa></Placa>
+    <RFC></RFC>
+    <NumeroSerie></NumeroSerie>
+    <Modelo></Modelo>
+    <Localidad></Localidad>
+    <MarcaLineaSublinea></MarcaLineaSublinea>
+    <Operacion></Operacion>
+    <Municipio></Municipio>
+    <PlacaAnterior></PlacaAnterior>
+    <NCI></NCI>
+    <Cilindraje></Cilindraje>
+    <CVVVehicular></CVVVehicular>
+    <FechaExpedicion></FechaExpedicion>
+    <Puertas></Puertas>
+    <Clase></Clase>
+    <Asientos></Asientos>
+    <Tipo></Tipo>
+    <OficinaExpendidora></OficinaExpendidora>
+    <Origen></Origen>
+    <Color></Color>
+    <Combustible></Combustible>
+    <Transmision></Transmision>
+    <Uso></Uso>
+    <RPA></RPA>
+    <Movimiento></Movimiento>
+    <NumeroMotor></NumeroMotor>
+    <Fabricacion>HECHO EN MÉXICO</Fabricacion>
+    <FechaGeneracion>2024-05-20 06:03:51</FechaGeneracion>
+</TarjetaCirculacion>

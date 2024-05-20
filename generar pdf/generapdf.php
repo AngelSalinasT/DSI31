@@ -22,7 +22,7 @@ $pdf->SetFont('Arial','B',30);//define el tipo de fuente
 //acepta el tamaño, y todo es obligartorio menos la familia de a fuente
 //$pdf->Cell(40,10,'¡Hola, Mundo!',1);//todo lo que vy a escribir en el documento
 //primer parametro, el ancho, el alto, la cadena d e texto, el bodrde, el saltp de linea
-$pdf->Image("hola.jpg",100,100,50,50);//los parametros son, el nombre del archivo, la posicicon xy de la hoja y el tamaño de la imagen
+$pdf->Image("../images/hola.jpg",100,100,50,50);//los parametros son, el nombre del archivo, la posicicon xy de la hoja y el tamaño de la imagen
 $pdf->Output('F');//tienen dos parametrs, la I lo abre en nelm navegaro, la D lo descarga, y la F lo guarda en el fichero local, solo que la S lo guarda en forma de cadena, despies se puede poner el nombre
 
 ?>

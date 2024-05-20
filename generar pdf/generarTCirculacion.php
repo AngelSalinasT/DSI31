@@ -1,59 +1,63 @@
 <?php
 require('../librerias/fpdf.php');
-include("../controlador/controlador.php");
+include('../controlador/controlador.php');
 
-$Id = $_POST['ID'];
+$Id = 1;
 
 $Con = Conectar();
 
-$SQL = "SELECT * FROM vtarjetaultra WHERE VERIFOLIO = '$Id';";
-
+$SQL = "SELECT * FROM vtarjetaultra WHERE FOLIOTA = '$Id';";
 $ResultSet = Ejecutar($Con, $SQL);
-
-$Fila = mysqli_fetch_row($ResultSet);
-
+$Fila = mysqli_fetch_assoc($ResultSet); // Obtiene los datos como un array asociativo
 Desconectar($Con);
 
 function generarXML($id, $fila) {
     $fechaGeneracion = date('Y-m-d H:i:s');
 
     $xmlContent = "\n<TarjetaCirculacion>\n";
-    $xmlContent .= "    <TipoServicio>{$fila[4]}</TipoServicio>\n";
+    $xmlContent .= "    <TipoServicio>{$fila['TIPOSERVICIO']}</TipoServicio>\n";
     $xmlContent .= "    <Holograma>ESTAMPA</Holograma>\n";
-    $xmlContent .= "    <Folio>{$fila[0]}</Folio>\n";
-    $xmlContent .= "    <Vigencia>{$fila[1]}</Vigencia>\n";
-    $xmlContent .= "    <Placa>{$fila[31]}</Placa>\n";
-    $xmlContent .= "    <RFC>{$fila[9]}</RFC>\n";
-    $xmlContent .= "    <NumeroSerie>{$fila[15]}</NumeroSerie>\n";
-    $xmlContent .= "    <Modelo>{$fila[27]}</Modelo>\n";
-    $xmlContent .= "    <Localidad>{$fila[13]}</Localidad>\n";
-    $xmlContent .= "    <MarcaLineaSublinea>{$fila[30]}</MarcaLineaSublinea>\n";
-    $xmlContent .= "    <Operacion>{$fila[8]}</Operacion>\n";
-    $xmlContent .= "    <Municipio>{$fila[12]}</Municipio>\n";
-    $xmlContent .= "    <PlacaAnterior>{$fila[29]}</PlacaAnterior>\n";
-    $xmlContent .= "    <NCI>{$fila[28]}</NCI>\n";
-    $xmlContent .= "    <Cilindraje>{$fila[17]}</Cilindraje>\n";
-    $xmlContent .= "    <CVVVehicular>{$fila[15]}</CVVVehicular>\n";
-    $xmlContent .= "    <FechaExpedicion>{$fila[2]}</FechaExpedicion>\n";
-    $xmlContent .= "    <Puertas>{$fila[19]}</Puertas>\n";
-    $xmlContent .= "    <Clase>{$fila[23]}</Clase>\n";
-    $xmlContent .= "    <Asientos>{$fila[20]}</Asientos>\n";
-    $xmlContent .= "    <Tipo>{$fila[24]}</Tipo>\n";
-    $xmlContent .= "    <OficinaExpendidora>{$fila[15]}</OficinaExpendidora>\n";
-    $xmlContent .= "    <Origen>{$fila[9]}</Origen>\n";
-    $xmlContent .= "    <Color>{$fila[33]}</Color>\n";
-    $xmlContent .= "    <Combustible>{$fila[21]}</Combustible>\n";
-    $xmlContent .= "    <Transmision>{$fila[22]}</Transmision>\n";
-    $xmlContent .= "    <Uso>{$fila[25]}</Uso>\n";
-    $xmlContent .= "    <RPA>{$fila[26]}</RPA>\n";
-    $xmlContent .= "    <Movimiento>{$fila[3]}</Movimiento>\n";
-    $xmlContent .= "    <NumeroMotor>{$fila[34]}</NumeroMotor>\n";
+    $xmlContent .= "    <Folio>{$fila['FOLIO']}</Folio>\n";
+    $xmlContent .= "    <Vigencia>{$fila['VIGENCIA']}</Vigencia>\n";
+    $xmlContent .= "    <Placa>{$fila['PLACA']}</Placa>\n";
+    $xmlContent .= "    <RFC>{$fila['RFC']}</RFC>\n";
+    $xmlContent .= "    <NumeroSerie>{$fila['NUMSERIE']}</NumeroSerie>\n";
+    $xmlContent .= "    <Modelo>{$fila['MODELO']}</Modelo>\n";
+    $xmlContent .= "    <Localidad>{$fila['DIRECCION']}</Localidad>\n";
+    $xmlContent .= "    <MarcaLineaSublinea>{$fila['MARCASUBLINEA']}</MarcaLineaSublinea>\n";
+    $xmlContent .= "    <Operacion>{$fila['OPERACION']}</Operacion>\n";
+    $xmlContent .= "    <Municipio>{$fila['MUNICIPIO']}</Municipio>\n";
+    $xmlContent .= "    <PlacaAnterior>{$fila['PLACAANT']}</PlacaAnterior>\n";
+    $xmlContent .= "    <NCI>{$fila['VERIFOLIO']}</NCI>\n";
+    $xmlContent .= "    <Cilindraje>{$fila['CILINDRAJE']}</Cilindraje>\n";
+    $xmlContent .= "    <CVVVehicular>{$fila['NUMSERIE']}</CVVVehicular>\n";
+    $xmlContent .= "    <FechaExpedicion>{$fila['FECHAEXPEDICION']}</FechaExpedicion>\n";
+    $xmlContent .= "    <Puertas>{$fila['PUERTAS']}</Puertas>\n";
+    $xmlContent .= "    <Clase>{$fila['CLASE']}</Clase>\n";
+    $xmlContent .= "    <Asientos>{$fila['ASIENTOS']}</Asientos>\n";
+    $xmlContent .= "    <Tipo>{$fila['TIPO']}</Tipo>\n";
+    $xmlContent .= "    <OficinaExpendidora>{$fila['CENTROVERIFICACION']}</OficinaExpendidora>\n";
+    $xmlContent .= "    <Origen>{$fila['ORIGEN']}</Origen>\n";
+    $xmlContent .= "    <Color>{$fila['COLOR']}</Color>\n";
+    $xmlContent .= "    <Combustible>{$fila['COMBUSTBLE']}</Combustible>\n";
+    $xmlContent .= "    <Transmision>{$fila['TRASNMISION']}</Transmision>\n";
+    $xmlContent .= "    <Uso>{$fila['USO']}</Uso>\n";
+    $xmlContent .= "    <RPA>{$fila['RPA']}</RPA>\n";
+    $xmlContent .= "    <Movimiento>{$fila['MOVIMIENTO']}</Movimiento>\n";
+    $xmlContent .= "    <NumeroMotor>{$fila['NOMOTOR']}</NumeroMotor>\n";
     $xmlContent .= "    <Fabricacion>HECHO EN MÉXICO</Fabricacion>\n";
     $xmlContent .= "    <FechaGeneracion>{$fechaGeneracion}</FechaGeneracion>\n";
     $xmlContent .= "</TarjetaCirculacion>";
 
-    $xmlFileName = 'TarjetaCirculacion_' . $id . '.xml';
-    $fileHandle = fopen($xmlFileName, 'a');
+    $xmlFileName = '../XML files/verificacion/' .'TarjetaCirculacion_' . $id . '.xml';
+
+    // Crear la carpeta si no existe
+    $carpetaXML = dirname($xmlFileName);
+    if (!file_exists($carpetaXML)) {
+        mkdir($carpetaXML, 0777, true);
+    }
+
+    $fileHandle = fopen($xmlFileName, 'w');
 
     if ($fileHandle) {
         fwrite($fileHandle, $xmlContent);
@@ -73,6 +77,38 @@ try {
 $pdf = new FPDF('L', 'mm', 'A4');
 $pdf->AddPage();
 $pdf->SetFont('Arial', '', 12);
+
+$tiposervicio = 'Tipo de Servicio: ' . $Fila['TIPOSERVICIO'];
+$holograma = 'Holograma: ESTAMPA';
+$folio = 'Folio: ' . $Fila['FOLIO'];
+$vigencia = 'Vigencia: ' . $Fila['VIGENCIA'];
+$placa = 'Placa: ' . $Fila['PLACA'];
+$rfc = 'RFC: ' . $Fila['RFC'];
+$numserie = 'Número de Serie: ' . $Fila['NUMSERIE'];
+$modelo = 'Modelo: ' . $Fila['MODELO'];
+$localidad = 'Localidad: ' . $Fila['DIRECCION'];
+$marcalineasublinea = 'Marca/Línea/Sublínea: ' . $Fila['MARCASUBLINEA'];
+$operacion = 'Operación: ' . $Fila['OPERACION'];
+$municipio = 'Municipio: ' . $Fila['MUNICIPIO'];
+$placaant = 'Placa Anterior: ' . $Fila['PLACAANT'];
+$NCI = 'NCI: ' . $Fila['VERIFOLIO'];
+$cilindraje = 'Cilindraje: ' . $Fila['CILINDRAJE'];
+$cvvvehicular = 'CVV Vehicular: ' . $Fila['NUMSERIE'];
+$fechaexpedicion = 'Fecha de Expedición: ' . $Fila['FECHAEXPEDICION'];
+$puertas = 'Puertas: ' . $Fila['PUERTAS'];
+$clase = 'Clase: ' . $Fila['CLASE'];
+$asientos = 'Asientos: ' . $Fila['ASIENTOS'];
+$tipo = 'Tipo: ' . $Fila['TIPO'];
+$oficinaexpendidora = 'Oficina Expendidora: ' . $Fila['CENTROVERIFICACION'];
+$origen = 'Origen: ' . $Fila['ORIGEN'];
+$color = 'Color: ' . $Fila['COLOR'];
+$combustible = 'Combustible: ' . $Fila['COMBUSTBLE'];
+$transmicion = 'Transmisión: ' . $Fila['TRASNMISION'];
+$uso = 'Uso: ' . $Fila['USO'];
+$rpa = 'RPA: ' . $Fila['RPA'];
+$movimiento = 'Movimiento: ' . $Fila['MOVIMIENTO'];
+$nummotor = 'Número de Motor: ' . $Fila['NOMOTOR'];
+$fabricacion = 'Fabricación: HECHO EN MÉXICO';
 
 $pdf->SetXY(10, 30);
 $pdf->Cell(0, 10, utf8_decode($tiposervicio), 0, 1);
@@ -111,18 +147,15 @@ $pdf->SetXY(10, 74);
 $pdf->Cell(0, 10, utf8_decode($municipio), 0, 1);
 
 $pdf->SetXY(160, 74);
-$pdf->Cell(0, 10, utf8_decode($folio), 0, 1);
+$pdf->Cell(0, 10, utf8_decode($NCI), 0, 1);
 
 $pdf->SetXY(160, 86);
 $pdf->Cell(0, 10, utf8_decode($placaant), 0, 1);
 
 $pdf->SetXY(10, 98);
-$pdf->Cell(0, 10, utf8_decode($NCI), 0, 1);
-
-$pdf->SetXY(60, 98);
 $pdf->Cell(0, 10, utf8_decode($cilindraje), 0, 1);
 
-$pdf->SetXY(100, 98);
+$pdf->SetXY(60, 98);
 $pdf->Cell(0, 10, utf8_decode($cvvvehicular), 0, 1);
 
 $pdf->SetXY(160, 98);
@@ -170,11 +203,11 @@ $pdf->Cell(0, 10, utf8_decode($nummotor), 0, 1);
 $pdf->SetXY(160, 160);
 $pdf->Cell(0, 10, utf8_decode($fabricacion), 0, 1);
 
-$pdf->Image('F1.png', 0, 170, 234, 5); 
-$pdf->Image('F2.png', 0, 175, 234, 35); 
-$pdf->Image('qr.png', 232, 146, 65, 65); 
-$pdf->Image('logoPro.jpg', 0, 0, 60, 30); 
-$pdf->Image('banner.png', 60, 10, 300, 10); 
+$pdf->Image('../images/F1.png', 0, 170, 234, 5);
+$pdf->Image('../images/F2.png', 0, 175, 234, 35);
+$pdf->Image('../images/qr.png', 232, 146, 65, 65);
+$pdf->Image('../images/logoPro.jpg', 0, 0, 60, 30);
+$pdf->Image('../images/banner.png', 60, 10, 300, 10);
 
 $pdf->SetXY(60, 3);
 $pdf->SetFont('Arial', 'B', 12);
