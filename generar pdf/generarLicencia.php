@@ -1,7 +1,7 @@
 <?php
 require('../librerias/fpdf.php');
 include('../controlador/controlador.php');
-$Id = 1;
+$Id = $_POST['ID'];
 
 $Con = Conectar();
 

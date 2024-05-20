@@ -2,7 +2,7 @@
 require('../librerias/fpdf.php');
 include('../controlador/controlador.php');
 
-$Id = 1;
+$Id = $_POST['ID'];
 
 $Con = Conectar();
 
@@ -49,7 +49,7 @@ function generarXML($id, $fila) {
     $xmlContent .= "    <FechaGeneracion>{$fechaGeneracion}</FechaGeneracion>\n";
     $xmlContent .= "</TarjetaCirculacion>";
 
-    $xmlFileName = '../XML files/verificacion/' .'TarjetaCirculacion_' . $id . '.xml';
+    $xmlFileName = '../XML files/circulacion/' .'TarjetaCirculacion_' . $id . '.xml';
 
     // Crear la carpeta si no existe
     $carpetaXML = dirname($xmlFileName);

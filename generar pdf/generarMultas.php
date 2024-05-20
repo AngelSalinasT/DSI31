@@ -1,11 +1,11 @@
 <?php
 require('../librerias/fpdf.php');
 include('../controlador/controlador.php');
-//$Id = $_POST['ID'];
+$Id = $_POST['ID'];
 
 $Con = Conectar();
 
-$SQL = "SELECT * FROM vmultas WHERE noLicencia = '1';";
+$SQL = "SELECT * FROM vmultas WHERE noLicencia = '$Id';";
 
 $ResultSet = Ejecutar($Con,$SQL);
 

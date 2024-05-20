@@ -13,7 +13,7 @@ $ResultSet = Ejecutar($Con,$SQL);
 $Fila = mysqli_fetch_row($ResultSet);
 
 Desconectar($Con);
-
+/*
 function generarXML($id, $fila) {
     $fechaGeneracion = date('Y-m-d H:i:s');
     $xmlContent = "\n<VerificacionVehiculo>\n";
@@ -60,7 +60,8 @@ try {
     die('Error: ' . $e->getMessage());
 }
 
-
+creo que no se necesita XML para este 
+*/
 $pdf = new FPDF('L','mm',array(279, 150)); 
 $pdf->AddPage();
 
@@ -191,11 +192,11 @@ $pdf->Cell(0,5,'VIGENCIA:',0,0);
 $pdf->SetXY(215,105);
 $pdf->Cell(0,5,$Fila[7],0,1);
 
-$pdf->Image('F2.png', 10, 5, 60, 15); 
-$pdf->Image('letras.png', 80, 5, 140, 15); 
-$pdf->Image('qr.png', 170, 80, 35, 35); 
-$pdf->Image('barras1.png', 160, 120, 90, 15); 
-$pdf->Image('banner.png', 0, 140, 280, 5); 
+$pdf->Image('../images/F2.png', 10, 5, 60, 15); 
+$pdf->Image('../images/letras.png', 80, 5, 140, 15); 
+$pdf->Image('../images/qr.png', 170, 80, 35, 35); 
+$pdf->Image('../images/barras1.png', 160, 120, 90, 15); 
+$pdf->Image('../images/banner.png', 0, 140, 280, 5); 
 $pdf->Output('I','TarjetaVericacion.pdf');
 ?>
 
