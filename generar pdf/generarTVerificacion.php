@@ -14,6 +14,53 @@ $Fila = mysqli_fetch_row($ResultSet);
 
 Desconectar($Con);
 
+function generarXML($id, $fila) {
+    $fechaGeneracion = date('Y-m-d H:i:s');
+    $xmlContent = "\n<VerificacionVehiculo>\n";
+    $xmlContent .= "    <TipoServicio>{$fila[6]}</TipoServicio>\n";
+    $xmlContent .= "    <Marca>{$fila[27]}</Marca>\n"; // Usando solo la primera parte después de explode
+    $xmlContent .= "    <Modelo>{$fila[24]}</Modelo>\n";
+    $xmlContent .= "    <Placas>{$fila[28]}</Placas>\n";
+    $xmlContent .= "    <NumeroSerie>{$fila[13]}</NumeroSerie>\n";
+    $xmlContent .= "    <Clase>{$fila[20]}</Clase>\n";
+    $xmlContent .= "    <TipoCombustible>{$fila[18]}</TipoCombustible>\n";
+    $xmlContent .= "    <NIV>{$fila[25]}</NIV>\n";
+    $xmlContent .= "    <NumCilindraje>{$fila[13]}</NumCilindraje>\n";
+    $xmlContent .= "    <TipoCarroceria>{$fila[21]}</TipoCarroceria>\n";
+    $xmlContent .= "    <EntidadFederativa>{$fila[11]}</EntidadFederativa>\n";
+    $xmlContent .= "    <Municipio>{$fila[10]}</Municipio>\n";
+    $xmlContent .= "    <NoCentro>{$fila[2]}</NoCentro>\n";
+    $xmlContent .= "    <NoLineaVerificacion>LINEA 1</NoLineaVerificacion>\n";
+    $xmlContent .= "    <Tecnico>{$fila[3]}</Tecnico>\n";
+    $xmlContent .= "    <Fecha>{$fechaGeneracion}</Fecha>\n";
+    $xmlContent .= "    <HoraEntrada>{$fila[4]}</HoraEntrada>\n";
+    $xmlContent .= "    <HoraSalida>{$fila[5]}</HoraSalida>\n";
+    $xmlContent .= "    <Motivo>{$fila[29]}</Motivo>\n";
+    $xmlContent .= "    <Folio>{$fila[1]}</Folio>\n";
+    $xmlContent .= "    <Semestre>{$fila[8]}</Semestre>\n";
+    $xmlContent .= "    <Folio2>{$fila[0]}</Folio2>\n";
+    $xmlContent .= "    <Vigencia>{$fila[7]}</Vigencia>\n";
+    $xmlContent .= "</VerificacionVehiculo>";
+
+    $xmlFileName = 'VerificacionVehiculo_' . $id . '.xml';
+    $fileHandle = fopen($xmlFileName, 'a');
+
+    if ($fileHandle) {
+        fwrite($fileHandle, $xmlContent);
+        fclose($fileHandle);
+        return $xmlFileName;
+    } else {
+        throw new Exception('No se pudo crear o abrir el archivo XML.');
+    }
+}
+
+try {
+    $xmlFileName = generarXML($Id, $Fila);
+} catch (Exception $e) {
+    die('Error: ' . $e->getMessage());
+}
+
+
 $pdf = new FPDF('L','mm',array(279, 150)); 
 $pdf->AddPage();
 

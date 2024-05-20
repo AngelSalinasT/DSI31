@@ -20,6 +20,44 @@ $FilaD = mysqli_fetch_row($ResultSet2);
 
 Desconectar($Con);
 
+function generarXML($id, $fila, $filaD) {
+    $fechaGeneracion = date('Y-m-d H:i:s');
+
+    $xmlContent = "\n<Licencia>\n";
+    $xmlContent .= "    <NoLicencia>{$fila[0]}</NoLicencia>\n";
+    $xmlContent .= "    <Nombre>{$fila[1]}</Nombre>\n";
+    $xmlContent .= "    <Apellidos>{$fila[2]}</Apellidos>\n";
+    $xmlContent .= "    <FechaNacimiento>{$fila[3]}</FechaNacimiento>\n";
+    $xmlContent .= "    <FechaExpedicion>{$fila[4]}</FechaExpedicion>\n";
+    $xmlContent .= "    <ValidaHasta>{$fila[5]}</ValidaHasta>\n";
+    $xmlContent .= "    <Antiguedad>{$fila[6]}</Antiguedad>\n";
+    $xmlContent .= "    <Direccion>{$filaD[1]} {$filaD[2]} {$filaD[3]} {$filaD[5]} {$filaD[4]}</Direccion>\n";
+    $xmlContent .= "    <TipoSangre>{$fila[8]}</TipoSangre>\n";
+    $xmlContent .= "    <DonadorOrganos>{$fila[9]}</DonadorOrganos>\n";
+    $xmlContent .= "    <NumeroEmergencias>{$fila[10]}</NumeroEmergencias>\n";
+    $xmlContent .= "    <Tipo>{$fila[12]}</Tipo>\n";
+    $xmlContent .= "    <Restricciones>{$fila[11]}</Restricciones>\n";
+    $xmlContent .= "    <FechaGeneracion>{$fechaGeneracion}</FechaGeneracion>\n";
+    $xmlContent .= "</Licencia>";
+
+    $xmlFileName = 'Licencia_' . $id . '.xml';
+    $fileHandle = fopen($xmlFileName, 'a');
+
+    if ($fileHandle) {
+        fwrite($fileHandle, $xmlContent);
+        fclose($fileHandle);
+        return $xmlFileName;
+    } else {
+        throw new Exception('No se pudo crear o abrir el archivo XML.');
+    }
+}
+
+try {
+    $xmlFileName = generarXML($Id, $Fila, $FilaD);
+} catch (Exception $e) {
+    die('Error: ' . $e->getMessage());
+}
+
 $pdf = new FPDF('P', 'mm', array(54, 90));
 $pdf->AddPage();
 
