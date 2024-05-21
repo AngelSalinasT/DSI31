@@ -3,32 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Captura de Foto</title>
+    <title>Subir Archivo o Tomar Foto</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 <body>
-    <body>
-        <div class="container">
-            <h2>Subir o tomar foto</h2>
+    <div class="container">
+        <h1>Subir Archivo o Tomar Foto</h1>
+    <form id="uploadForm">
+        <label>
+            <input type="radio" name="option" value="file" id="chooseFile"> Subir un archivo
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="option" value="camera" id="chooseCamera"> Tomar una foto
+        </label>
+        <br><br>
 
-            <form id="uploadForm" enctype="multipart/form-data">
-                <input type="radio" id="uploadOption" name="photoOption" value="upload" checked>
-                <label for="uploadOption">Subir archivo</label><br>
-                <input type="radio" id="cameraOption" name="photoOption" value="camera">
-                <label for="cameraOption">Tomar foto</label><br><br>
-                
-                <input type="file" id="fileInput" name="fileInput"><br><br>
-                
-                <video id="camera" width="400" height="300" autoplay></video><br>
-                <canvas id="canvas" width="400" height="300"></canvas><br>
-                
-                <img id="preview" src="" alt="Vista previa"><br><br>
-                
-                <button type="submit">Enviar</button>
-            </form>
-            <script src="app.js"></script>
-        </div>   
+        <div id="fileInputDiv" class="hidden">
+            <label for="fileInput">Seleccionar un archivo:</label>
+            <input type="file" id="fileInput" accept="image/*">
+        </div>
 
+        <div id="cameraInputDiv" class="hidden">
+            <video id="video" width="300" height="200" autoplay class="hidden"></video>
+            <button type="button" id="takePhotoButton" class="hidden">Tomar foto</button>
+            <canvas id="canvas" class="hidden"></canvas>
+            <img id="preview" class="hidden" alt="Vista previa de la foto">
+        </div>
+        <br><br>
+
+        <button type="submit">Enviar</button>
+            
+    </form>
+    </div>
+
+
+    <script>
+        const chooseFile = document.getElementById('chooseFile');
+        const chooseCamera = document.getElementById('chooseCamera');
+        const fileInputDiv = document.getElementById('fileInputDiv');
+        const cameraInputDiv = document.getElementById('cameraInputDiv');
+        const video = document.getElementById('video');
+        const takePhotoButton = document.getElementById('takePhotoButton');
+        const canvas = document.getElementById('canvas');
+        const preview = document.getElementById('preview');
+
+        chooseFile.addEventListener('change', function() {
+            fileInputDiv.classList.remove('hidden');
+            cameraInputDiv.classList.add('hidden');
+            stopVideoStream();
+        });
+
+        chooseCamera.addEventListener('change', function() {
+            fileInputDiv.classList.add('hidden');
+            cameraInputDiv.classList.remove('hidden');
+            startVideoStream();
+        });
+
+        takePhotoButton.addEventListener('click', function() {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+            const dataURL = canvas.toDataURL('image/png');
+            preview.src = dataURL;
+            preview.classList.remove('hidden');
+            stopVideoStream();
+        });
+
+        function startVideoStream() {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => {
+                    video.srcObject = stream;
+                    video.classList.remove('hidden');
+                    takePhotoButton.classList.remove('hidden');
+                })
+                .catch(err => {
+                    console.error('Error al acceder a la cámara:', err);
+                    alert('No se pudo acceder a la cámara.');
+                });
+        }
+
+        function stopVideoStream() {
+            const stream = video.srcObject;
+            if (stream) {
+                const tracks = stream.getTracks();
+                tracks.forEach(track => track.stop());
+                video.srcObject = null;
+            }
+            video.classList.add('hidden');
+            takePhotoButton.classList.add('hidden');
+        }
+
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const fileInput = document.getElementById('fileInput');
+            const files = fileInput.files.length > 0 ? fileInput.files : [];
+
+            let formData = new FormData();
+
+            if (files.length > 0) {
+                formData.append('file', files[0]);
+            } else if (!preview.classList.contains('hidden')) {
+                const dataURL = preview.src;
+                const blob = dataURLtoBlob(dataURL);
+                formData.append('file', blob, 'photo.png');
+            } else {
+                alert('Por favor, selecciona un archivo o toma una foto.');
+                return;
+            }
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                return response.json();
+            }).then(data => {
+                alert('Archivo subido con éxito');
+            }).catch(error => {
+                console.error('Error al subir el archivo:', error);
+                alert('Error al subir el archivo');
+            });
+        });
+
+        function dataURLtoBlob(dataURL) {
+            const byteString = atob(dataURL.split(',')[1]);
+            const mimeString = dataURL.split(',')[0].split(':')[1].split(';')[0];
+            const ab = new ArrayBuffer(byteString.length);
+            const ia = new Uint8Array(ab);
+            for (let i = 0; i < byteString.length; i++) {
+                ia[i] = byteString.charCodeAt(i);
+            }
+            return new Blob([ab], { type: mimeString });
+        }
+    </script>
 </body>
 </html>
-

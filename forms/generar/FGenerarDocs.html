@@ -16,6 +16,10 @@
             <label for="verificacion">Verificación</label><br>
             <input type="radio" id="circulacion" name="documento" value="circulacion" onclick="changeAction('generarTCirculacion.php')">
             <label for="circulacion">Tarjeta de Circulación</label><br>
+            <input type="radio" id="multa" name="documento" value="multa" onclick="changeAction('generarMultas.php')">
+            <label for="multa">Multas</label><br>
+        </form>
+
         </form>
 
         <form method="post" action="../../generar pdf/generarLicencia.php" id="form-licencia" style="display: none;">
@@ -38,6 +42,14 @@
             <input type="text" name="ID" id="circulacionID">
             <button type="submit">Enviar</button>
         </form>
+
+        <form method="post" action="../../generar pdf/generarMultas.php" id="form-multa" style="display: none;">
+            <h1>GENERAR MULTAS</h1>
+            <label for="multasID">Inserte el folio: </label>
+            <input type="text" name="ID" id="multasID">
+            <button type="submit">Enviar</button>
+        </form>
+
     </div>
 
     <script>
@@ -45,6 +57,8 @@
             document.getElementById("form-licencia").style.display = "none";
             document.getElementById("form-verificacion").style.display = "none";
             document.getElementById("form-circulacion").style.display = "none";
+            document.getElementById("form-multa").style.display = "none";
+
 
             switch (action) {
                 case 'generarLicencia.php':
@@ -55,6 +69,9 @@
                     break;
                 case 'generarTCirculacion.php':
                     document.getElementById("form-circulacion").style.display = "block";
+                    break;
+                case 'generarMultas.php':
+                    document.getElementById("form-multa").style.display = "block";
                     break;
             }
         }
