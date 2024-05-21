@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>Formulario de Centros de Verificación</title>
-        <link rel="stylesheet" type="text/css" href="../../css/styles.css">
-    </head>
-    <body>
-        <div class="container">
-            <h2>Subir o tomar foto</h2>
-
-            <form id="uploadForm" enctype="multipart/form-data">
-                <input type="radio" id="uploadOption" name="photoOption" value="upload" checked>
-                <label for="uploadOption">Subir archivo</label><br>
-                <input type="radio" id="cameraOption" name="photoOption" value="camera">
-                <label for="cameraOption">Tomar foto</label><br><br>
-                
-                <input type="file" id="fileInput" name="fileInput"><br><br>
-                
-                <video id="camera" width="400" height="300" autoplay></video><br>
-                <canvas id="canvas" width="400" height="300"></canvas><br>
-                
-                <button type="submit">Enviar</button>
-            </form>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Centros de Verificación</title>
+    <link rel="stylesheet" type="text/css" href="../../css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Centros de Verificación</h1>  
+        <form action="CCentrosVerificacion.php">
+        <label>Valor</label>
+        <input type="text" name="Valor" id="Valor">
+        <br>
+        <label>Atributo</label>
+        <input type="radio" name="Atributo" id="Atributo" value="ID" checked>ID
+        <input type="radio" name="Atributo" id="Atributo" value="RAZONSOCIAL">RAZONSOCIAL
+        <input type="radio" name="Atributo" id="Atributo" value="DIRECCION">DIRECCION
+        <input type="radio" name="Atributo" id="Atributo" value="TELEFONO">TELEFONO
+        <br><br>
+        <button type="submit" value="Evaluar">Buscar</button>
+        </form>
+    </div>
+</body>
 </html>
+
 
 <?php
 include("../../controlador/controlador.php");

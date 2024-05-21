@@ -5,7 +5,7 @@ $Id = $_POST['ID'];
 
 $Con = Conectar();
 
-$SQL = "SELECT * FROM vmultas WHERE noLicencia = '$Id';";
+$SQL = "SELECT * FROM vmultas WHERE folio = '$Id';";
 
 $ResultSet = Ejecutar($Con,$SQL);
 

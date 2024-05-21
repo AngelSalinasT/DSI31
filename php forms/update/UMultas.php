@@ -15,7 +15,7 @@
         </form>
 
         <?php
-        include("../../controlador/controlador/Controlador.php");
+        include("../../controlador/controlador.php");
         if(isset($_POST['Folio'])){
             $Folio = $_POST['Folio'];
             

@@ -24,9 +24,9 @@
                     print("\nCuenta No Bloqueada");
                     print("\nEntrar");
                     if($Fila[2] == "U"){
-                        header("Location: MenuUsuario.html");
+                        header("Location: ../navbar/MenuUsuario.html");
                     } else{
-                        header("Location: MenuAdmin.html");
+                        header("Location: ../navbar/MenuAdmin.html");
                     }
 ;                } else{
                     print("\nCuenta BLOQUEADA");
