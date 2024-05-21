@@ -11,6 +11,70 @@ $ResultSet = Ejecutar($Con,$SQL);
 
 $Fila = mysqli_fetch_row($ResultSet);
 
+
+// Función para generar el XML de la multa
+function generarXMLMulta($id, $Fila) {
+    $fechaGeneracion = date('Y-m-d H:i:s');
+
+    $xmlContent = "\n<Multa>\n";
+    $xmlContent .= "    <Fecha>{$Fila[0]}</Fecha>\n";
+    $xmlContent .= "    <Hora>{$Fila[1]}</Hora>\n";
+    $xmlContent .= "    <Folio>{$Fila[2]}</Folio>\n";
+    $xmlContent .= "    <Velocimetro>{$Fila[3]}</Velocimetro>\n";
+    $xmlContent .= "    <Carretera>{$Fila[4]}</Carretera>\n";
+    $xmlContent .= "    <Via>{$Fila[5]}</Via>\n";
+    $xmlContent .= "    <Km>{$Fila[6]}</Km>\n";
+    $xmlContent .= "    <Nombre>{$Fila[7]}</Nombre>\n";
+    $xmlContent .= "    <Apellido>{$Fila[8]}</Apellido>\n";
+    $xmlContent .= "    <Licencia>{$Fila[9]}</Licencia>\n";
+    $xmlContent .= "    <Vehiculo>{$Fila[10]}</Vehiculo>\n";
+    $xmlContent .= "    <Color>{$Fila[11]}</Color>\n";
+    $xmlContent .= "    <Modelo>{$Fila[12]}</Modelo>\n";
+    $xmlContent .= "    <Placas>{$Fila[13]}</Placas>\n";
+    $xmlContent .= "    <Infraccion>{$Fila[14]}</Infraccion>\n";
+    $xmlContent .= "    <Observaciones>{$Fila[15]}</Observaciones>\n";
+    $xmlContent .= "    <ReporteSeccion>{$Fila[16]}</ReporteSeccion>\n";
+    $xmlContent .= "    <Fundamento>{$Fila[22]}</Fundamento>\n";
+    $xmlContent .= "    <Motivo>{$Fila[17]}</Motivo>\n";
+    $xmlContent .= "    <GarantiaRetenida>{$Fila[23]}</GarantiaRetenida>\n";
+    $xmlContent .= "    <NoParteAccidente>{$Fila[18]}</NoParteAccidente>\n";
+    $xmlContent .= "    <Convenio>{$Fila[24]}</Convenio>\n";
+    $xmlContent .= "    <PuestoDisposicion>{$Fila[19]}</PuestoDisposicion>\n";
+    $xmlContent .= "    <DepositoOficial>{$Fila[25]}</DepositoOficial>\n";
+    $xmlContent .= "    <ObservaOperativo>{$Fila[20]}</ObservaOperativo>\n";
+    $xmlContent .= "    <ObservaConductor>1</ObservaConductor>\n";
+    $xmlContent .= "    <CalificacionBoleta>{$Fila[21]}</CalificacionBoleta>\n";
+    $xmlContent .= "    <Oficial>{$Fila[26]}</Oficial>\n";
+    $xmlContent .= "    <Firma>{$Fila[27]}</Firma>\n";
+    $xmlContent .= "    <FechaGeneracion>{$fechaGeneracion}</FechaGeneracion>\n";
+    $xmlContent .= "</Multa>";
+
+    $xmlFileName = '../XML files/multas/' . 'Multa_' . $id . '.xml';
+
+    // Crear la carpeta si no existe
+    $carpetaXML = dirname($xmlFileName);
+    if (!file_exists($carpetaXML)) {
+        mkdir($carpetaXML, 0777, true);
+    }
+
+    $fileHandle = fopen($xmlFileName, 'w');
+    if ($fileHandle) {
+        fwrite($fileHandle, $xmlContent);
+        fclose($fileHandle);
+        return $xmlFileName;
+    } else {
+        throw new Exception('No se pudo crear o abrir el archivo XML.');
+    }
+}
+
+try {
+    $xmlFileName = generarXMLMulta($Id, $Fila);
+} catch (Exception $e) {
+    die('Error: ' . $e->getMessage());
+}
+
+//FIN XML
+
 // Clase extendida de FPDF
 class PDF extends FPDF {
     // Cabecera de página

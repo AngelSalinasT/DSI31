@@ -1,0 +1,33 @@
+
+<Multa>
+    <Fecha>2024-02-16</Fecha>
+    <Hora></Hora>
+    <Folio>4</Folio>
+    <Velocimetro></Velocimetro>
+    <Carretera></Carretera>
+    <Via></Via>
+    <Km></Km>
+    <Nombre>Salvador</Nombre>
+    <Apellido>Camacho Pacheco</Apellido>
+    <Licencia>1</Licencia>
+    <Vehiculo>VW GOL</Vehiculo>
+    <Color>VERDE</Color>
+    <Modelo>2014</Modelo>
+    <Placas>DASDAS4</Placas>
+    <Infraccion>1</Infraccion>
+    <Observaciones>1</Observaciones>
+    <ReporteSeccion>1</ReporteSeccion>
+    <Fundamento>1</Fundamento>
+    <Motivo>1</Motivo>
+    <GarantiaRetenida>1</GarantiaRetenida>
+    <NoParteAccidente>1</NoParteAccidente>
+    <Convenio>15</Convenio>
+    <PuestoDisposicion>10</PuestoDisposicion>
+    <DepositoOficial>1</DepositoOficial>
+    <ObservaOperativo>1</ObservaOperativo>
+    <ObservaConductor>1</ObservaConductor>
+    <CalificacionBoleta>1</CalificacionBoleta>
+    <Oficial>Salvador </Oficial>
+    <Firma>1245</Firma>
+    <FechaGeneracion>2024-05-21 06:31:13</FechaGeneracion>
+</Multa>
