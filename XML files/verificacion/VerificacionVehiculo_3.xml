@@ -1,0 +1,25 @@
+
+<VerificacionVehiculo>
+    <TipoServicio>RELLENAR</TipoServicio>
+    <Marca>VW GOL</Marca>
+    <Placas>DASDAS4</Placas>
+    <NumeroSerie>4566R</NumeroSerie>
+    <Clase>SEDAN</Clase>
+    <TipoCombustible>0</TipoCombustible>
+    <NIV>45</NIV>
+    <NumCilindraje>4</NumCilindraje>
+    <TipoCarroceria>4</TipoCarroceria>
+    <EntidadFederativa>QUERETARO</EntidadFederativa>
+    <Municipio>TEQUISQUIAPAN</Municipio>
+    <NoCentro>1</NoCentro>
+    <NoLineaVerificacion>LINEA 1</NoLineaVerificacion>
+    <Tecnico>JUAN PEREZ</Tecnico>
+    <Fecha>2024-05-21 03:29:35</Fecha>
+    <HoraEntrada>10:30:00</HoraEntrada>
+    <HoraSalida>11:30:00</HoraSalida>
+    <Motivo>DFAFA</Motivo>
+    <Folio>127</Folio>
+    <Semestre>2</Semestre>
+    <Folio2>1</Folio2>
+    <Vigencia>2</Vigencia>
+</VerificacionVehiculo>

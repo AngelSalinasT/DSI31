@@ -12,7 +12,53 @@ $ResultSet = Ejecutar($Con, $SQL);
 
 $Fila = mysqli_fetch_assoc($ResultSet); // Ahora obtendrás un array asociativo
 
+$fila = mysqli_fetch_row($ResultSet);
 Desconectar($Con);
+
+function generarXML($Id, $fila) {
+    $fechaGeneracion = date('Y-m-d H:i:s');
+    $xmlContent = "\n<VerificacionVehiculo>\n";
+    $xmlContent .= "    <TipoServicio>{$fila['DICTAMEN']}</TipoServicio>\n";
+    $xmlContent .= "    <Marca>{$fila['MARCASUBLINEA']}</Marca>\n"; // Usando solo la primera parte después de explode
+    $xmlContent .= "    <Placas>{$fila['PLACA']}</Placas>\n";
+    $xmlContent .= "    <NumeroSerie>{$fila['NUMSERIE']}</NumeroSerie>\n";
+    $xmlContent .= "    <Clase>{$fila['CLASE']}</Clase>\n";
+    $xmlContent .= "    <TipoCombustible>{$fila['COMBUSTBLE']}</TipoCombustible>\n";
+    $xmlContent .= "    <NIV>{$fila['RPA']}</NIV>\n";
+    $xmlContent .= "    <NumCilindraje>{$fila['CILINDRAJE']}</NumCilindraje>\n";
+    $xmlContent .= "    <TipoCarroceria>{$fila['TIPO']}</TipoCarroceria>\n";
+    $xmlContent .= "    <EntidadFederativa>{$fila['ESTADO']}</EntidadFederativa>\n";
+    $xmlContent .= "    <Municipio>{$fila['MUNICIPIO']}</Municipio>\n";
+    $xmlContent .= "    <NoCentro>{$fila['ID']}</NoCentro>\n";
+    $xmlContent .= "    <NoLineaVerificacion>LINEA 1</NoLineaVerificacion>\n";
+    $xmlContent .= "    <Tecnico>{$fila['TECNICO']}</Tecnico>\n";
+    $xmlContent .= "    <Fecha>{$fechaGeneracion}</Fecha>\n";
+    $xmlContent .= "    <HoraEntrada>{$fila['HORAENTRADA']}</HoraEntrada>\n";
+    $xmlContent .= "    <HoraSalida>{$fila['HORASALIDA']}</HoraSalida>\n";
+    $xmlContent .= "    <Motivo>{$fila['ORDEN']}</Motivo>\n";
+    $xmlContent .= "    <Folio>{$fila['FOLIO']}</Folio>\n";
+    $xmlContent .= "    <Semestre>{$fila['SEMESTRE']}</Semestre>\n";
+    $xmlContent .= "    <Folio2>{$fila['TARJETAFOLIO']}</Folio2>\n";
+    $xmlContent .= "    <Vigencia>{$fila['VIGENCIAVERIFICACION']}</Vigencia>\n";
+    $xmlContent .= "</VerificacionVehiculo>";
+
+    $xmlFileName = '../XML files/verificacion/' . 'VerificacionVehiculo_' . $Id . '.xml';
+    $fileHandle = fopen($xmlFileName, 'a');
+
+    if ($fileHandle) {
+        fwrite($fileHandle, $xmlContent);
+        fclose($fileHandle);
+        return $xmlFileName;
+    } else {
+        throw new Exception('No se pudo crear o abrir el archivo XML.');
+    }
+}
+
+try {
+    $xmlFileName = generarXML($Id, $Fila);
+} catch (Exception $e) {
+    die('Error: ' . $e->getMessage());
+}
 
 $pdf = new FPDF('L', 'mm', array(279, 150));
 $pdf->AddPage();

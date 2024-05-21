@@ -1,0 +1,26 @@
+
+<VerificacionVehiculo>
+    <TipoServicio></TipoServicio>
+    <Marca></Marca>
+    <Modelo></Modelo>
+    <Placas></Placas>
+    <NumeroSerie></NumeroSerie>
+    <Clase></Clase>
+    <TipoCombustible></TipoCombustible>
+    <NIV></NIV>
+    <NumCilindraje></NumCilindraje>
+    <TipoCarroceria></TipoCarroceria>
+    <EntidadFederativa></EntidadFederativa>
+    <Municipio></Municipio>
+    <NoCentro></NoCentro>
+    <NoLineaVerificacion>LINEA 1</NoLineaVerificacion>
+    <Tecnico></Tecnico>
+    <Fecha>2024-05-21 03:21:40</Fecha>
+    <HoraEntrada></HoraEntrada>
+    <HoraSalida></HoraSalida>
+    <Motivo></Motivo>
+    <Folio></Folio>
+    <Semestre></Semestre>
+    <Folio2></Folio2>
+    <Vigencia></Vigencia>
+</VerificacionVehiculo>
