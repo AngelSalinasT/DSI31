@@ -51,11 +51,17 @@ function limpiarFirma() {
 
 function guardarFirma() {
   const dataURL = canvas.toDataURL('image/png');
-  const link = document.createElement('a');
-  link.href = dataURL;
-  link.download = 'firma.png';
-  link.click();
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', 'save_signature.php', true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      console.log('Firma guardada en el servidor');
+    }
+  };
+  xhr.send('img=' + encodeURIComponent(dataURL));
 }
+
 
 function getOffset(event) {
   let offsetX, offsetY;
