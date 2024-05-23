@@ -1,101 +1,137 @@
+/* CSS Mejorado para el Menú de Administrador */
+
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
 }
 
-/* Estilos de la barra de navegación */
 .navbar {
-    background-color: #4CA1FF;
-    padding: 10px 20px;
-    border-radius: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    background-color: #333;
+    overflow: hidden;
 }
 
-/* Estilo del logo/marca */
 .navbar .brand {
-    color: white;
+    float: left;
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 20px;
     text-decoration: none;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 1.5em;
 }
 
-/* Estilos de la lista */
 .navbar ul {
-    list-style: none;
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    gap: 20px;
+    overflow: hidden;
+    float: right;
 }
 
-/* Estilos de los enlaces */
-.navbar ul li a {
-    color: white;
+.navbar ul li {
+    float: left;
+}
+
+.navbar ul li a, .dropdown .dropbtn {
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
 }
 
-.navbar ul li a:hover {
-    background-color: #357ABD;
+.navbar ul li a:hover, .dropdown:hover .dropbtn {
+    background-color: #575757;
 }
 
-/* Estilos para el dropdown */
-.navbar ul .dropdown {
-    position: relative;
+.navbar ul li.dropdown {
+    display: inline-block;
 }
 
-.navbar ul .dropdown-content {
+.dropdown-content {
     display: none;
     position: absolute;
-    background-color: #4CA1FF;
+    background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    border-radius: 8px;
-    padding: 0;
-    margin: 0;
 }
 
-.navbar ul .dropdown-content li {
-    display: block;
-}
-
-.navbar ul .dropdown-content li a {
-    color: white;
-    padding: 10px 15px;
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
     text-decoration: none;
     display: block;
-    border-radius: 4px;
+    text-align: left;
 }
 
-.navbar ul .dropdown-content li a:hover {
-    background-color: #357ABD;
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
 }
 
-.navbar ul .dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* Responsivo */
-@media (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-    }
+/* Estilos específicos para submenús */
+.navbar ul li.dropdown ul {
+    position: absolute;
+    top: 50px; /* Ajusta esta distancia según sea necesario */
+    left: 0;
+    display: none;
+    z-index: 1;
+}
 
+.navbar ul li.dropdown:hover ul {
+    display: block;
+}
+
+.dropdown-content li {
+    position: relative;
+}
+
+.dropdown-content li ul {
+    top: 0;
+    left: 160px; /* Mismo valor que min-width en .dropdown-content */
+    display: none;
+}
+
+.dropdown-content li:hover ul {
+    display: block;
+}
+
+/* Ajustes responsivos */
+@media screen and (max-width: 768px) {
     .navbar ul {
+        float: none;
+        display: flex;
         flex-direction: column;
-        gap: 10px;
+        width: 100%;
     }
 
-    .navbar ul li a {
+    .navbar ul li {
+        width: 100%;
+    }
+
+    .navbar ul li a, .dropdown .dropbtn {
+        width: 100%;
+        text-align: left;
+    }
+
+    .dropdown-content {
+        position: relative;
+        width: 100%;
+    }
+
+    .dropdown-content a {
         padding: 10px;
-        text-align: center;
+    }
+
+    .dropdown-content li ul {
+        position: relative;
+        left: 0;
     }
 }
