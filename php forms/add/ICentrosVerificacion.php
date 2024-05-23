@@ -1,5 +1,6 @@
 <?php
     include("../../controlador/controlador.php");
+    include('../../login/validar.php');
 
     $idCentroVerificacion = $_POST['ID'];
     $razonSocial = $_POST['RAZONSOCIAL'];

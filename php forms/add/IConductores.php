@@ -1,5 +1,6 @@
 <?php
     include("../../controlador/controlador.php");
+    include('../../login/validar.php');
 
     $nombre = $_REQUEST['NOMBRE'];
     $apellidos = $_REQUEST['APELLIDOS'];

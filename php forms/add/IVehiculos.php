@@ -1,5 +1,7 @@
 <?php
     include("../../controlador/controlador.php");
+    include('../../login/validar.php');
+
     $numeroSerie = $_POST['NUMSERIE'];
     $cilindraje = $_POST['CILINDRAJE'];
     $capacidad = $_POST['CAPACIDAD'];

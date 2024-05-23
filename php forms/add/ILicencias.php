@@ -1,5 +1,6 @@
 <?php
 include("../../controlador/controlador.php");
+include('../../login/validar.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $numeroLicencia = $_POST['NOLICENCIA'];

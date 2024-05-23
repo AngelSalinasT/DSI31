@@ -1,5 +1,6 @@
 <?php
     include("../../controlador/controlador.php");
+    include('../../login/validar.php');
 
     $fecha = $_POST['FECHA'];
     $dictamen = $_POST['DICTAMEN'];

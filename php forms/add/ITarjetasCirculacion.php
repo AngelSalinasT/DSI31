@@ -1,5 +1,6 @@
 <?php
     include("../../controlador/controlador.php");
+    include('../../login/validar.php');
 
     $folio = $_GET['FOLIO'];
     $vigencia = $_GET['VIGENCIA'];

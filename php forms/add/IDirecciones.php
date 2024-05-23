@@ -1,5 +1,6 @@
 <?php
 include("../../controlador/controlador.php");
+include('../../login/validar.php');
 
 $calle = $_REQUEST['CALLE'];
 $numero = $_REQUEST['NUMERO'];
