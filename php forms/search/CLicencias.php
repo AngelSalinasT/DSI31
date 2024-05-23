@@ -20,7 +20,7 @@
         <input type="radio" name="Atributo" id="Atributo" value="ANTIGUEDAD">ANTIGUEDAD
         <input type="radio" name="Atributo" id="Atributo" value="CONDUCTOR">CONDUCTOR
         <br><br>
-        <button type="submit" value="Evaluar">Buscar</button>
+        <button type="submit">Enviar</button>
         </form>
     </div>
 </body>

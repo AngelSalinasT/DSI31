@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Editar Tenencia</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
 
@@ -11,7 +11,7 @@
     <form method="post">
         <label for="folio">Folio</label>
         <input type="text" id="folio" name="folio">
-        <input type="submit" value="Buscar">
+        <button type="submit">Enviar</button>
     </form>
 
 <?php
@@ -42,7 +42,7 @@
                     <label for="tarjeta_circulacion">Tarjeta de Circulación</label>
                     <input type="text" id="tarjeta_circulacion" name="tarjeta_circulacion" value="<?php echo $Fila['TARJETACIRCULACION']; ?>">
                     <input type="hidden" id="folio" name="folio" value="<?php echo $folio; ?>">
-                    <input type="submit" value="Actualizar">
+                    <button type="submit">Enviar</button>
                 </form>
             <?php
         } else {

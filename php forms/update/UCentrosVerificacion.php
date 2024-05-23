@@ -12,7 +12,7 @@
     <form method="post">
         <label for="id">ID del Centro de Verificación</label>
         <input type="text" id="id" name="id">
-        <input type="submit" value="Buscar">
+        <button type="submit">Enviar</button>
     </form>
 
 <?php
@@ -32,7 +32,7 @@
                 <label for="telefono">Teléfono</label>
                 <input type="number" id="telefono" name="telefono" value="<?php echo $Fila[3]; ?>">
                 <input type="hidden" id="id_centro" name="id_centro" value="<?php echo $id; ?>">
-                <input type="submit" value="Actualizar">
+                <button type="submit">Enviar</button>
             </form>
         <?php
         Desconectar($Con);

@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Editar Dirección</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
 
@@ -11,7 +11,7 @@
     <form method="post">
         <label for="id">ID</label>
         <input type="text" id="id" name="id">
-        <input type="submit" value="Buscar">
+        <button type="submit">Enviar</button>
     </form>
 
     <?php

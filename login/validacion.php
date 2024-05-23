@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (trim($password) == $Fila['password'] && trim($hash) == $Fila['hash']) {
                 $intentos = 0;
                 $SQL_update = "UPDATE cuentas SET intentos=$intentos WHERE userName='$usuario'";
-                Ejecutar($Con, $SQL_update);
+                Ejecutar($Con, $SQL_update);x
                 if ($Fila['status'] == 1) {
                     if ($Fila['bloqueo'] == 0) {
                         if ($Fila['tipo'] == "U") {

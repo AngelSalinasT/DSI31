@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Editar Licencia</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
 
@@ -11,7 +11,7 @@
     <form method="post">
         <label for="no_licencia">Número de Licencia</label>
         <input type="text" id="no_licencia" name="no_licencia">
-        <input type="submit" value="Buscar">
+        <button type="submit">Enviar</button>
     </form>
     <?php
     include("../../controlador/controlador.php");
@@ -54,7 +54,7 @@
             <br>
             <br>
             <input type="hidden" id="nolicencia" name="nolicencia" value="<?php echo $nolicencia; ?>">
-            <input type="submit" value="Guardar Cambios">
+            <button type="submit">Enviar</button>
         </form>
         <?php
         Desconectar($Con);

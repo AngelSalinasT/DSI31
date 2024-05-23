@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Actualizar Multas</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="../../css/styles.css">
 </head>
 <body>
     <div class="container">
@@ -11,7 +11,7 @@
         <form method="post">
             <label>Folio:</label>
             <input type="text" id="Folio" name="Folio">
-            <input type="submit" value="Buscar">
+            <button type="submit">Enviar</button>
         </form>
 
         <?php
@@ -70,7 +70,7 @@
                     <label>Hora:</label>
                     <input type="time" id="Hora" name="Hora" value="<?php print($Fila[20]); ?>"><br>
                     <input type="hidden" id="FolioHidden" name="FolioHidden" value="<?php print($Folio); ?>">
-                    <input type="submit" value="Actualizar">
+                    <button type="submit">Enviar</button>
                 </form>
                 <?php
             }
