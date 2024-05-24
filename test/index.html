@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario completo</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Formulario completo</h1>
+
+        <form id="registroForm" method="post" >
+
+            <h2>Sección de fotografía</h2>
+            <div id="seccion-foto">
+                <video id="video" width="300" height="200" autoplay></video>
+                <br>
+                <img id="preview" class="hidden" alt="Vista previa de la foto">
+                <canvas id="canvas" class="hidden" width="300" height="200"></canvas>
+                <br>
+                <button id="takePhotoButton" type="button">Tomar foto</button>
+                <button id="retakePhotoButton" type="button">Volver a tomar</button>
+                <br>
+
+            </div>
+            <br>
+            <h2>Sección de firma</h2>
+            <div id="seccion-firma">
+                <canvas id="signature-pad" width="300" height="200"></canvas>
+                <button id="clearSignature" type="button">Limpiar firma</button>
+            </div>
+            <br>
+            <button id="submit" type="submit">Enviar</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

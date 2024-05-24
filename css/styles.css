@@ -127,11 +127,6 @@ body {
     display: none;
 }
 
-#preview {
-    max-width: 400px;
-    max-height: 300px;
-}
-
 /* webcam */
 .hidden {
     display: none;
@@ -141,6 +136,7 @@ body {
     width: 100%;
     max-width: 300px;
     margin-top: 10px;
+    border-radius: 8px;
 }
 
 /* singnature */
@@ -149,11 +145,12 @@ canvas {
     border: 1px solid #000;
     display: block;
     margin-bottom: 10px;
+    
 }
 
 #video {
-    width: 250px; /* Ancho deseado */
-    height: 300px; /* Altura deseada */
+    width: 300px; /* Ancho deseado */
+    height: 200px; /* Altura deseada */
     object-fit: cover; /* Para mantener la proporción y llenar el área */
     border: 1px solid #ccc; /* Opcional, para agregar un borde */
     border-radius: 8px; /* Opcional, para bordes redondeados */
