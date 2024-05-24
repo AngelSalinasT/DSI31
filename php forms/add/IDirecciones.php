@@ -19,13 +19,18 @@ print("Estado: $estado <br>");
 $SQL = "INSERT INTO direcciones (CALLE, NUMERO, COLONIA, MUNICIPIO, CODIGOPOSTAL, ESTADO) VALUES ('$calle','$numero','$colonia','$municipio','$codigoPostal','$estado');";
 print($SQL);
 
-$Con = Conectar();
-$ResultSet = Ejecutar($Con,$SQL);//mysql_query devuelve 0 o 1 o error
-
-if ($ResultSet) {
-    print("Registro insertado");
+try {
+    $Con = Conectar();
+    $ResultSet = Ejecutar($Con, $SQL);
+    
+    if ($ResultSet) {
+        print("Registro insertado");
+    } else {
+        throw new Exception("Error al insertar el registro.");
+    }
+    
     Desconectar($Con);
-} else {
-    print("Error");
+} catch (Exception $e) {
+    print("<br><br>Se ha producido un error, favor de ingresar valores validos y que existan en la base de datos");
 }
 ?>

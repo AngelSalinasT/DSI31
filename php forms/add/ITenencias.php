@@ -26,13 +26,18 @@
     VALUES ('$folio', '$capturaPago', '$fechaLimite', '$importe', '$tipoPago', '$fechaActual', '$hora', '$lineaCaptura', '$tarjetaCirculacion');";
     print($SQL);
 
-    $Con = Conectar();
-    $ResultSet = Ejecutar($Con,$SQL);//mysql_queri devuelce 0 o 1 o error
-    
-    if ($ResultSet) {
-        print("Registro insertado");
+    try {
+        $Con = Conectar();
+        $ResultSet = Ejecutar($Con, $SQL);
+        
+        if ($ResultSet) {
+            print("Registro insertado");
+        } else {
+            throw new Exception("Error al insertar el registro.");
+        }
+        
         Desconectar($Con);
-    } else {
-        print("Error");
+    } catch (Exception $e) {
+        print("<br><br>Se ha producido un error, favor de ingresar valores validos y que existan en la base de datos");
     }
 ?>
