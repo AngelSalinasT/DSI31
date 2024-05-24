@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Editar Conductor</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
 
@@ -11,7 +11,7 @@
     <form method="post">
         <label for="id">ID del Conductor</label>
         <input type="text" id="id" name="id">
-        <input type="submit" value="Buscar">
+        <button type="submit">Enviar</button>
     </form>
 
 <?php
@@ -71,7 +71,7 @@
                 <input type="file" id="firma" name="firma" value="<?php echo $Fila[12]; ?>">
 
                 <input type="hidden" id="id_conductor" name="id_conductor" value="<?php echo $id; ?>">
-                <input type="submit" value="Actualizar">
+                <button type="submit">Enviar</button>
             </form>
         <?php
         Desconectar($Con);

@@ -1,5 +1,6 @@
 <?php
 include("../../controlador/controlador.php");
+include('../../login/validar.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $numeroLicencia = $_POST['NOLICENCIA'];
@@ -47,14 +48,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     print($SQL);
 
     // Execute the query
-    $Con = Conectar();
-    $ResultSet = Ejecutar($Con, $SQL);
-
-    if ($ResultSet) {
-        print("Registro insertado");
+    try {
+        $Con = Conectar();
+        $ResultSet = Ejecutar($Con, $SQL);
+        
+        if ($ResultSet) {
+            print("Registro insertado");
+        } else {
+            throw new Exception("Error al insertar el registro.");
+        }
+        
         Desconectar($Con);
-    } else {
-        print("Error");
+    } catch (Exception $e) {
+        print("<br><br>Se ha producido un error, favor de ingresar valores validos y que existan en la base de datos");
     }
 } else {
     echo json_encode(["success" => false, "message" => "Método de solicitud no permitido"]);

@@ -32,7 +32,7 @@
             <input type="radio" name="Atributo" id="Atributo" value="ORDEN">ORDEN
             <input type="radio" name="Atributo" id="Atributo" value="COLOR">COLOR
             <br><br>
-            <input type="submit" value="Evaluar">    <button type="submit" value="Evaluar">Buscar</button>    
+            <button type="submit">Enviar</button>
         </form>
     </div>
 </body>

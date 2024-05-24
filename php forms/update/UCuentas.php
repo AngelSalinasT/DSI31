@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Editar Cuenta</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
 
@@ -11,7 +11,7 @@
     <form method="post">
         <label for="username">Nombre de Usuario</label>
         <input type="text" id="username" name="username">
-        <input type="submit" value="Buscar">
+        <button type="submit">Enviar</button>
     </form>
 
 <?php
@@ -35,7 +35,7 @@
                 <label for="intentos">Intentos</label>
                 <input type="text" id="intentos" name="intentos" value="<?php echo $Fila[5]; ?>">
                 <input type="hidden" id="username" name="username" value="<?php echo $username; ?>">
-                <input type="submit" value="Actualizar">
+                <button type="submit">Enviar</button>
             </form>
         <?php
         Desconectar($Con);

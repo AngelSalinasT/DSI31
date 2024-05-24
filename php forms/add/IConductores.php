@@ -1,5 +1,6 @@
 <?php
     include("../../controlador/controlador.php");
+    include('../../login/validar.php');
 
     $nombre = $_REQUEST['NOMBRE'];
     $apellidos = $_REQUEST['APELLIDOS'];
@@ -14,7 +15,7 @@
     $fechaNac = $_REQUEST['fechan'];
     $firma = $_REQUEST['firma'];
     
-    print("Nombre: $nombre <br>");
+    print("Nombre: $nombre <br>");   
     print("Apellidos: $apellidos <br>");
     print("CURP: $curp <br>");
     print("Teléfono: $telefono <br>");
@@ -30,13 +31,18 @@
     $SQL = "INSERT INTO conductores (NOMBRE, APELLIDOS, CURP, TELEFONO, CORREO, RFC, TIPOSANGRE, DONADORACTIVO, NUMEMER, DIRECCION,FECHANAC,Firma) VALUES ('$nombre','$apellidos','$curp','$telefono','$correo','$rfc','$tipoSangre','$donadorActivo','$numEmergencia','$direccion','$fechaNac','$firma');";
     print($SQL); 
     
-    $Con = Conectar();
-    $ResultSet = Ejecutar($Con,$SQL);//mysql_queri devuelce 0 o 1 o error
-    
-    if ($ResultSet) {
-        print("Registro insertado");
+    try {
+        $Con = Conectar();
+        $ResultSet = Ejecutar($Con, $SQL);
+        
+        if ($ResultSet) {
+            print("Registro insertado");
+        } else {
+            throw new Exception("Error al insertar el registro.");
+        }
+        
         Desconectar($Con);
-    } else {
-        print("Error");
+    } catch (Exception $e) {
+        print("<br><br>Se ha producido un error, favor de ingresar valores validos y que existan en la base de datos");
     }
 ?>

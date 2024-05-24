@@ -26,7 +26,7 @@
             <input type="radio" name="Atributo" id="Atributo" value="CENTROVERIFICACION">CENTROVERIFICACION
             <input type="radio" name="Atributo" id="Atributo" value="TARJETACIRCULACION">TARJETACIRCULACION
             <br><br>
-            <button type="submit" value="Evaluar">Buscar</button>
+            <button type="submit">Enviar</button>
         </form>
     </div>
 </body>

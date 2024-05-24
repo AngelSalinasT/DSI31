@@ -10,9 +10,11 @@ $SQL = "SELECT * FROM vmultas WHERE folio = '$Id';";
 $ResultSet = Ejecutar($Con,$SQL);
 
 $Fila = mysqli_fetch_row($ResultSet);
+if (!$Fila || !is_array($Fila)) {
+    die('Error: No se encontraron registros para el ID proporcionado.');
+}
 
-
-// Función para generar el XML de la multa
+Desconectar($Con);
 function generarXMLMulta($id, $Fila) {
     $fechaGeneracion = date('Y-m-d H:i:s');
 

@@ -20,7 +20,7 @@
             <input type="radio" name="Atributo" id="Atributo" value="FIRMA">FIRMA
             <input type="radio" name="Atributo" id="Atributo" value="REGION">REGION
             <br><br>
-            <button type="submit" value="Evaluar">Buscar</button>
+            <button type="submit">Enviar</button>
             </form>
         </div>
     </body>

@@ -22,7 +22,7 @@
         <input type="radio" name="Atributo" id="Atributo" value="VEHICULO">VEHICULO
         <input type="radio" name="Atributo" id="Atributo" value="PROPIETARIO">PROPIETARIO
         <br><br>
-        <button type="submit" value="Evaluar">Buscar</button>
+        <button type="submit">Enviar</button>
     </form>
         </div>
     </body>

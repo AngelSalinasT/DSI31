@@ -23,7 +23,7 @@
         <input type="radio" name="Atributo" id="Atributo" value="LINEACAPTURA">LINEACAPTURA
         <input type="radio" name="Atributo" id="Atributo" value="TARJETACIRCULACION">TARJETACIRCULACION
         <br><br>
-        <button type="submit" value="Evaluar">Buscar</button>
+        <button type="submit">Enviar</button>
         </form>
     </div>
 </body>

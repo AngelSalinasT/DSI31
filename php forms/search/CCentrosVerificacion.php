@@ -18,7 +18,7 @@
         <input type="radio" name="Atributo" id="Atributo" value="DIRECCION">DIRECCION
         <input type="radio" name="Atributo" id="Atributo" value="TELEFONO">TELEFONO
         <br><br>
-        <button type="submit" value="Evaluar">Buscar</button>
+        <button type="submit">Enviar</button>
         </form>
     </div>
 </body>

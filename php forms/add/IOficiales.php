@@ -1,5 +1,6 @@
 <?php
     include("../../controlador/controlador.php");
+    include('../../login/validar.php');
 
     $nombre = $_REQUEST['NOMBRE'];
     $apellidos = $_REQUEST['APELLIDOS'];
@@ -14,13 +15,18 @@
     $SQL = "INSERT INTO oficiales (NOMBRE, APELLIDOS, FIRMA, REGION) VALUES ('$nombre','$apellidos','$firma','$region');";   
     print($SQL);
 
-    $Con = Conectar();
-    $ResultSet = Ejecutar($Con,$SQL);//mysql_queri devuelce 0 o 1 o error
-    
-    if ($ResultSet) {
-        print("Registro insertado");
+    try {
+        $Con = Conectar();
+        $ResultSet = Ejecutar($Con, $SQL);
+        
+        if ($ResultSet) {
+            print("Registro insertado");
+        } else {
+            throw new Exception("Error al insertar el registro.");
+        }
+        
         Desconectar($Con);
-    } else {
-        print("Error");
+    } catch (Exception $e) {
+        print("<br><br>Se ha producido un error, favor de ingresar valores validos y que existan en la base de datos");
     }
 ?>

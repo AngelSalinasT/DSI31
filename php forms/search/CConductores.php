@@ -25,7 +25,7 @@
         <input type="radio" name="Atributo" id="Atributo" value="NUMEMER">NUMEMER
         <input type="radio" name="Atributo" id="Atributo" value="DIRECCION">DIRECCION
         <br><br>
-        <button type="submit" value="Evaluar">Buscar</button>
+        <button type="submit">Enviar</button>
         </form>
      </div>
 </body>

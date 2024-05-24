@@ -21,7 +21,7 @@
         <input type="radio" name="Atributo" id="Atributo" value="CODIGOPOSTAL">CODIGOPOSTAL
         <input type="radio" name="Atributo" id="Atributo" value="ESTADO">ESTADO
         <br><br>
-        <button type="submit" value="Evaluar">Buscar</button>
+        <button type="submit">Enviar</button>
     </form>
     </div>
 </body>

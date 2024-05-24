@@ -1,5 +1,6 @@
 <?php
 include("../../controlador/controlador.php");
+include('../../login/validar.php');
 
 $fecha = $_REQUEST['FECHA'];
 $reporteSeccion = $_REQUEST['REPORTESECCION'];
@@ -47,13 +48,18 @@ $SQL = "INSERT INTO multas (FECHA, REPORTESECCION, FUNDAMENTO, MOTIVO, GARANTIAR
 VALUES ('$fecha','$reporteSeccion','$fundamento','$motivo','$garantiaRetenida','$noParteAccidente','$convenio','$puestoDisposicion','$depositoOficial','$observacionesOperativo','$observacionesConductor','$calificacionBoleta','$noLicencia','$oficiales','$tarjetaCirculacion','$via','$kilometro','$carretera','$velocimetro','$hora');";
 print($SQL);   
 
-$Con = Conectar();
-$ResultSet = Ejecutar($Con,$SQL);
-
-if ($ResultSet) {
-    print("Registro insertado");
+try {
+    $Con = Conectar();
+    $ResultSet = Ejecutar($Con, $SQL);
+    
+    if ($ResultSet) {
+        print("Registro insertado");
+    } else {
+        throw new Exception("Error al insertar el registro.");
+    }
+    
     Desconectar($Con);
-} else {
-    print("Error");
+} catch (Exception $e) {
+    print("<br><br>Se ha producido un error, favor de ingresar valores validos y que existan en la base de datos");
 }
 ?>
