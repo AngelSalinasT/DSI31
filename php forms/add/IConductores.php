@@ -15,7 +15,7 @@
     $fechaNac = $_REQUEST['fechan'];
     $firma = $_REQUEST['firma'];
     
-    print("Nombre: $nombre <br>");
+    print("Nombre: $nombre <br>");   
     print("Apellidos: $apellidos <br>");
     print("CURP: $curp <br>");
     print("Teléfono: $telefono <br>");

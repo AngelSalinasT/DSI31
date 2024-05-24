@@ -10,6 +10,9 @@ $SQL = "SELECT * FROM vdatoslicencia WHERE noLicencia = '$Id';";
 $ResultSet = Ejecutar($Con,$SQL);
 
 $Fila = mysqli_fetch_row($ResultSet);
+if (!$Fila || !is_array($Fila)) {
+    die('Error: No se encontraron registros para el ID proporcionado.');
+}
 
 $SQLD = "SELECT * FROM vdirecciones WHERE  id = '$Fila[7]';";
 
@@ -43,7 +46,7 @@ function generarXML($id, $fila, $filaD) {
     $xmlContent .= "</Licencia>";
 
     $xmlFileName = '../XML files/licencia/' .'Licencia_' . $id . '.xml';
-    $fileHandle = fopen($xmlFileName, 'a');
+    $fileHandle = fopen($xmlFileName, 'w');
 
     if ($fileHandle) {
         fwrite($fileHandle, $xmlContent);

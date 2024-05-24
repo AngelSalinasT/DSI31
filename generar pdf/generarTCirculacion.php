@@ -9,6 +9,9 @@ $Con = Conectar();
 $SQL = "SELECT * FROM vtarjetaultra WHERE FOLIOTA = '$Id';";
 $ResultSet = Ejecutar($Con, $SQL);
 $Fila = mysqli_fetch_assoc($ResultSet); // Obtiene los datos como un array asociativo
+if (!$Fila || !is_array($Fila)) {
+    die('Error: No se encontraron registros para el ID proporcionado.');
+}
 Desconectar($Con);
 
 function generarXML($id, $fila) {

@@ -10,40 +10,50 @@ $SQL = "SELECT * FROM vverficiacionesultra WHERE mamalon = '$Id';";
 
 $ResultSet = Ejecutar($Con, $SQL);
 
+if (!$ResultSet || mysqli_num_rows($ResultSet) == 0) {
+    die('Error: No se encontraron registros para el ID proporcionado.');
+}
+
 $Fila = mysqli_fetch_assoc($ResultSet); // Ahora obtendrás un array asociativo
 
-$fila = mysqli_fetch_row($ResultSet);
+if (!$Fila || !is_array($Fila)) {
+    die('Error: No se encontraron registros para el ID proporcionado.');
+}
+if (!isset($Fila['DICTAMEN'], $Fila['MARCASUBLINEA'], $Fila['PLACA'], $Fila['NUMSERIE'], $Fila['CLASE'], $Fila['COMBUSTBLE'], $Fila['RPA'], $Fila['CILINDRAJE'], $Fila['TIPO'], $Fila['ESTADO'], $Fila['MUNICIPIO'], $Fila['ID'], $Fila['TARJETAFOLIO'], $Fila['HORAENTRADA'], $Fila['HORASALIDA'], $Fila['ORDEN'], $Fila['FOLIO'], $Fila['SEMESTRE'], $Fila['VIGENCIAVERIFICACION'], $Fila['TECNICO'])) {
+    die('Error: Algunos campos requeridos no están presentes en el resultado de la consulta.');
+}
+
 Desconectar($Con);
 
-function generarXML($Id, $fila) {
+function generarXML($Id, $Fila) {
     $fechaGeneracion = date('Y-m-d H:i:s');
     $xmlContent = "\n<VerificacionVehiculo>\n";
-    $xmlContent .= "    <TipoServicio>{$fila['DICTAMEN']}</TipoServicio>\n";
-    $xmlContent .= "    <Marca>{$fila['MARCASUBLINEA']}</Marca>\n"; // Usando solo la primera parte después de explode
-    $xmlContent .= "    <Placas>{$fila['PLACA']}</Placas>\n";
-    $xmlContent .= "    <NumeroSerie>{$fila['NUMSERIE']}</NumeroSerie>\n";
-    $xmlContent .= "    <Clase>{$fila['CLASE']}</Clase>\n";
-    $xmlContent .= "    <TipoCombustible>{$fila['COMBUSTBLE']}</TipoCombustible>\n";
-    $xmlContent .= "    <NIV>{$fila['RPA']}</NIV>\n";
-    $xmlContent .= "    <NumCilindraje>{$fila['CILINDRAJE']}</NumCilindraje>\n";
-    $xmlContent .= "    <TipoCarroceria>{$fila['TIPO']}</TipoCarroceria>\n";
-    $xmlContent .= "    <EntidadFederativa>{$fila['ESTADO']}</EntidadFederativa>\n";
-    $xmlContent .= "    <Municipio>{$fila['MUNICIPIO']}</Municipio>\n";
-    $xmlContent .= "    <NoCentro>{$fila['ID']}</NoCentro>\n";
+    $xmlContent .= "    <TipoServicio>{$Fila['DICTAMEN']}</TipoServicio>\n";
+    $xmlContent .= "    <Marca>{$Fila['MARCASUBLINEA']}</Marca>\n"; // Usando solo la primera parte después de explode
+    $xmlContent .= "    <Placas>{$Fila['PLACA']}</Placas>\n";
+    $xmlContent .= "    <NumeroSerie>{$Fila['NUMSERIE']}</NumeroSerie>\n";
+    $xmlContent .= "    <Clase>{$Fila['CLASE']}</Clase>\n";
+    $xmlContent .= "    <TipoCombustible>{$Fila['COMBUSTBLE']}</TipoCombustible>\n";
+    $xmlContent .= "    <NIV>{$Fila['RPA']}</NIV>\n";
+    $xmlContent .= "    <NumCilindraje>{$Fila['CILINDRAJE']}</NumCilindraje>\n";
+    $xmlContent .= "    <TipoCarroceria>{$Fila['TIPO']}</TipoCarroceria>\n";
+    $xmlContent .= "    <EntidadFederativa>{$Fila['ESTADO']}</EntidadFederativa>\n";
+    $xmlContent .= "    <Municipio>{$Fila['MUNICIPIO']}</Municipio>\n";
+    $xmlContent .= "    <NoCentro>{$Fila['ID']}</NoCentro>\n";
     $xmlContent .= "    <NoLineaVerificacion>LINEA 1</NoLineaVerificacion>\n";
-    $xmlContent .= "    <Tecnico>{$fila['TECNICO']}</Tecnico>\n";
+    $xmlContent .= "    <Tecnico>{$Fila['TECNICO']}</Tecnico>\n";
     $xmlContent .= "    <Fecha>{$fechaGeneracion}</Fecha>\n";
-    $xmlContent .= "    <HoraEntrada>{$fila['HORAENTRADA']}</HoraEntrada>\n";
-    $xmlContent .= "    <HoraSalida>{$fila['HORASALIDA']}</HoraSalida>\n";
-    $xmlContent .= "    <Motivo>{$fila['ORDEN']}</Motivo>\n";
-    $xmlContent .= "    <Folio>{$fila['FOLIO']}</Folio>\n";
-    $xmlContent .= "    <Semestre>{$fila['SEMESTRE']}</Semestre>\n";
-    $xmlContent .= "    <Folio2>{$fila['TARJETAFOLIO']}</Folio2>\n";
-    $xmlContent .= "    <Vigencia>{$fila['VIGENCIAVERIFICACION']}</Vigencia>\n";
+    $xmlContent .= "    <HoraEntrada>{$Fila['HORAENTRADA']}</HoraEntrada>\n";
+    $xmlContent .= "    <HoraSalida>{$Fila['HORASALIDA']}</HoraSalida>\n";
+    $xmlContent .= "    <Motivo>{$Fila['ORDEN']}</Motivo>\n";
+    $xmlContent .= "    <Folio>{$Fila['FOLIO']}</Folio>\n";
+    $xmlContent .= "    <Semestre>{$Fila['SEMESTRE']}</Semestre>\n";
+    $xmlContent .= "    <Folio2>{$Fila['TARJETAFOLIO']}</Folio2>\n";
+    $xmlContent .= "    <Vigencia>{$Fila['VIGENCIAVERIFICACION']}</Vigencia>\n";
     $xmlContent .= "</VerificacionVehiculo>";
 
     $xmlFileName = '../XML files/verificacion/' . 'VerificacionVehiculo_' . $Id . '.xml';
-    $fileHandle = fopen($xmlFileName, 'a');
+    $fileHandle = fopen($xmlFileName, 'w');
 
     if ($fileHandle) {
         fwrite($fileHandle, $xmlContent);
@@ -59,6 +69,7 @@ try {
 } catch (Exception $e) {
     die('Error: ' . $e->getMessage());
 }
+
 
 $pdf = new FPDF('L', 'mm', array(279, 150));
 $pdf->AddPage();

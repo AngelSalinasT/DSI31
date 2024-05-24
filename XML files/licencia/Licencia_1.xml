@@ -13,7 +13,7 @@
     <NumeroEmergencias>414141567</NumeroEmergencias>
     <Tipo>C</Tipo>
     <Restricciones>NO TIENE MANOSs</Restricciones>
-    <FechaGeneracion>2024-05-20 06:02:41</FechaGeneracion>
+    <FechaGeneracion>2024-05-23 21:39:28</FechaGeneracion>
 </Licencia>
 <Licencia>
     <NoLicencia>1</NoLicencia>
@@ -29,21 +29,5 @@
     <NumeroEmergencias>414141567</NumeroEmergencias>
     <Tipo>C</Tipo>
     <Restricciones>NO TIENE MANOSs</Restricciones>
-    <FechaGeneracion>2024-05-20 08:03:34</FechaGeneracion>
-</Licencia>
-<Licencia>
-    <NoLicencia>1</NoLicencia>
-    <Nombre>Salvador</Nombre>
-    <Apellidos>Camacho Pacheco</Apellidos>
-    <FechaNacimiento>2024-04-23</FechaNacimiento>
-    <FechaExpedicion>2024-04-03</FechaExpedicion>
-    <ValidaHasta>2024-04-30</ValidaHasta>
-    <Antiguedad>1</Antiguedad>
-    <Direccion>Rancho Largo 45 Juriquilla 55698 SAN JUAN DEL RIO</Direccion>
-    <TipoSangre>A+</TipoSangre>
-    <DonadorOrganos>0</DonadorOrganos>
-    <NumeroEmergencias>414141567</NumeroEmergencias>
-    <Tipo>C</Tipo>
-    <Restricciones>NO TIENE MANOSs</Restricciones>
-    <FechaGeneracion>2024-05-21 03:13:35</FechaGeneracion>
+    <FechaGeneracion>2024-05-23 21:39:38</FechaGeneracion>
 </Licencia>
