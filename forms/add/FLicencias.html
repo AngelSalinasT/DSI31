@@ -8,69 +8,68 @@
 <body>
     <div class="container">
         <h1>Formulario de Licencias</h1>
-        <form id="licenciaForm" method="POST" action="ILicencias.php">
-            <label>Número de Licencia:</label>
-            <input type="text" id="NOLICENCIA" name="NOLICENCIA"><br>
+        <form id="licenciaForm" method="POST" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Información de la Licencia</legend>
+                <label for="NOLICENCIA">Número de Licencia:</label>
+                <input type="text" id="NOLICENCIA" name="NOLICENCIA" required><br>
 
-            <label for="foto">Tomar foto o subir:</label>
-            <label>
-                <input type="radio" name="option" value="file" id="chooseFile"> Subir un archivo
-                <input type="radio" name="option" value="camera" id="chooseCamera"> Tomar una foto
-            </label>
+                <label for="TIPO">Tipo:</label>
+                <select id="TIPO" name="TIPO" required>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select><br>
 
-            <div id="fileInputDiv" class="hidden">
-                <label for="fileInput">Seleccionar un archivo:</label>
-                <input type="file" id="fileInput" accept="image/*">
-                <br><br>
-            </div>
+                <label for="FECHAEXPEDICION">Fecha de Expedición:</label>
+                <input type="date" id="FECHAEXPEDICION" name="FECHAEXPEDICION" required><br>
 
-            <div id="cameraInputDiv" class="hidden">
-                <video id="video" width="300" height="200" autoplay class="hidden"></video>
-                <br><br>
-                <button type="button" id="takePhotoButton" class="hidden">Tomar foto</button>
-                <canvas id="canvas" class="hidden"></canvas>
-                <img id="preview" class="hidden" alt="Vista previa de la foto">
-                <br><br>
-            </div>
+                <label for="VIGENCIA">Años de Vigencia:</label>
+                <select id="VIGENCIA" name="VIGENCIA" required>
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                </select><br>
 
-            <label for="TIPO">Tipo:</label>
-            <select id="TIPO" name="TIPO">
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-                <option value="D">D</option>
-            </select>
+                <label for="ANTIGUEDAD">Antigüedad:</label>
+                <input type="number" id="ANTIGUEDAD" name="ANTIGUEDAD" required><br>
 
-            <label>Fecha de Expedición:</label>
-            <input type="date" id="FECHAEXPEDICION" name="FECHAEXPEDICION"><br>
+                <label for="CONDUCTOR">ID del Conductor:</label>
+                <input type="text" id="CONDUCTOR" name="CONDUCTOR" required><br>
 
-            <label for="VIGENCIA">Años De Vigencia:</label>
-            <select id="VIGENCIA" name="VIGENCIA">
-                <option value="3">3</option>
-                <option value="5">5</option>
-            </select><br>
+                <label for="RESTRICCIONES">Restricciones:</label>
+                <input type="text" id="RESTRICCIONES" name="RESTRICCIONES" required><br>
+            </fieldset>
 
-            <label>Antigüedad:</label>
-            <input type="number" id="ANTIGUEDAD" name="ANTIGUEDAD"><br>
+            <fieldset>
+                <legend>Fotografía</legend>
+                <div id="seccion-foto">
+                    <video id="video" width="300" height="200" autoplay></video>
+                    <br>
+                    <img id="preview" class="hidden" alt="Vista previa de la foto">
+                    <canvas id="canvas" class="hidden" width="300" height="200"></canvas>
+                    <br>
+                    <button id="takePhotoButton" type="button">Tomar foto</button>
+                    <button id="retakePhotoButton" type="button">Volver a tomar</button>
+                </div>
+            </fieldset>
 
-            <label>ID del Conductor:</label>
-            <input type="text" id="CONDUCTOR" name="CONDUCTOR"><br>
-
-            <label for="restricciones">Restricciones: </label>
-            <input type="text" id="RESTRICCIONES" name="RESTRICCIONES"><br>
-
-            <!-- Área para la firma -->
-            <label>Firma:</label>
-            <canvas id="signatureCanvas" width="400" height="200"></canvas><br>
-            <button type="button" id="clearSignatureButton">Limpiar Firma</button>
-            <button type="button" id="saveSignatureButton">Guardar Firma</button><br>
+            <fieldset>
+                <legend>Firma</legend>
+                <div id="seccion-firma">
+                    <canvas id="signature-pad" width="300" height="200" required></canvas>
+                    <button id="clearSignature" type="button">Limpiar firma</button>
+                </div>
+            </fieldset>
 
             <br>
-            <button type="submit">Enviar</button>
+            <button id="submit">Enviar</button>
         </form>
+        <div id="message"></div>
     </div>
 
-    <!-- scripts -->
-    <script src="../../js/licencia.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+    <script src="../../js/script.js"></script>
 </body>
 </html>

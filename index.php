@@ -3,7 +3,7 @@
 $request_uri = $_SERVER['REQUEST_URI'];
 $script_name = $_SERVER['SCRIPT_NAME'];
 
-$base_path = '/DSI31/';
+$base_path = '/dsi31/';
 $allowed_file = $base_path . 'login/login.html';
 $allowed_directories = [$base_path . 'registro', $base_path . 'css'];
 

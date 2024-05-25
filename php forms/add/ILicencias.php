@@ -3,66 +3,73 @@ include("../../controlador/controlador.php");
 include('../../login/validar.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Datos recibidos del formulario
     $numeroLicencia = $_POST['NOLICENCIA'];
-    $tipoLicencia = $_POST['TIPO'];
+    $tipo = $_POST['TIPO'];
     $fechaExpedicion = $_POST['FECHAEXPEDICION'];
     $vigencia = $_POST['VIGENCIA'];
     $antiguedad = $_POST['ANTIGUEDAD'];
-    $idConductor = $_POST['CONDUCTOR'];
+    $conductor = $_POST['CONDUCTOR'];
     $restricciones = $_POST['RESTRICCIONES'];
 
-    // Handle signature
-    $signatureData = $_POST['signature'];
-    $signatureData = str_replace('data:image/png;base64,', '', $signatureData);
-    $signatureData = str_replace(' ', '+', $signatureData);
-    $signatureDecoded = base64_decode($signatureData);
-    $signatureFileName = 'signatures/' . uniqid() . '.png';
-    file_put_contents($signatureFileName, $signatureDecoded);
-
-    // Handle photo
-    if (isset($_FILES['file']) && $_FILES['file']['size'] > 0) {
-        $photoFileName = 'uploads/' . basename($_FILES['file']['name']);
-        move_uploaded_file($_FILES['file']['tmp_name'], $photoFileName);
-    } else {
-        $photoData = $_POST['photo'];
-        $photoData = str_replace('data:image/png;base64,', '', $photoData);
-        $photoData = str_replace(' ', '+', $photoData);
-        $photoDecoded = base64_decode($photoData);
-        $photoFileName = 'uploads/' . uniqid() . '.png';
-        file_put_contents($photoFileName, $photoDecoded);
-    }
-
-    // Display the received data
-    print("Número de Licencia: $numeroLicencia <br>");
-    print("Tipo: $tipoLicencia <br>");
-    print("Fecha de Expedición: $fechaExpedicion <br>");
-    print("Vigencia: $vigencia <br>");
-    print("Antigüedad: $antiguedad <br>");
-    print("ID del Conductor: $idConductor <br>");
-    print("Restricciones: $restricciones <br>");
-    print("Firma: $signatureFileName <br>");
-    print("Foto: $photoFileName <br>");
-
-    // Prepare SQL query
-    $SQL = "INSERT INTO licencias (noLicencia, tipo, fechaExpedicion, vigencia, antiguedad, conductor, restricciones, firma, foto) VALUES ('$numeroLicencia', '$tipoLicencia', '$fechaExpedicion', '$vigencia', '$antiguedad', '$idConductor', '$restricciones', '$signatureFileName', '$photoFileName');";
-    print($SQL);
-
-    // Execute the query
+    // Verificación de la firma y la foto
     try {
+        if (!isset($_FILES['foto']) || !isset($_FILES['firma'])) {
+            throw new Exception('No se recibieron los archivos esperados.');
+        }
+
+        // Rutas de los directorios para guardar las fotos y firmas
+        $signatureDir = '../../images/firma/';
+        $photosDir = '../../images/fotos/';
+
+        // Crea los directorios si no existen
+        if (!is_dir($signatureDir) && !mkdir($signatureDir, 0777, true)) {
+            throw new Exception('No se pudo crear el directorio de firma.');
+        }
+
+        if (!is_dir($photosDir) && !mkdir($photosDir, 0777, true)) {
+            throw new Exception('No se pudo crear el directorio de fotos.');
+        }
+
+        // Genera nombres únicos para la foto y la firma
+        $fotoName = uniqid('foto_', true) . '.' . pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
+        $firmaName = uniqid('firma_', true) . '.' . pathinfo($_FILES['firma']['name'], PATHINFO_EXTENSION);
+
+        // Define las rutas completas para guardar los archivos
+        $fotoPath = $photosDir . $fotoName;
+        $firmaPath = $signatureDir . $firmaName;
+
+        // Prepara la consulta SQL para insertar los datos en la base de datos
+        $SQL = "INSERT INTO licencias (NOLICENCIA, TIPO, FECHAEXPEDICION, VIGENCIA, ANTIGUEDAD, CONDUCTOR, RESTRICCIONES, firma, foto) 
+            VALUES ('$numeroLicencia', '$tipo', '$fechaExpedicion', '$vigencia', '$antiguedad', '$conductor', '$restricciones', '$firmaPath', '$fotoPath')";
+
+        // Ejecuta la consulta SQL
         $Con = Conectar();
         $ResultSet = Ejecutar($Con, $SQL);
-        
+
+        // Verifica si la consulta fue exitosa
         if ($ResultSet) {
-            print("Registro insertado");
+            // Mueve los archivos subidos a los directorios correspondientes
+            if (move_uploaded_file($_FILES['foto']['tmp_name'], $fotoPath) && move_uploaded_file($_FILES['firma']['tmp_name'], $firmaPath)) {
+                // Si los archivos se mueven correctamente, devuelve un mensaje de éxito
+                echo json_encode(['message' => 'Los archivos se subieron correctamente y el registro se insertó.', 'fotoPath' => $fotoPath, 'firmaPath' => $firmaPath]);
+            } else {
+                // Si ocurre un error al mover los archivos, lanza una excepción
+                throw new Exception('Error al subir los archivos.');
+            }
         } else {
-            throw new Exception("Error al insertar el registro.");
+            // Si la consulta falla, lanza una excepción
+            throw new Exception('Error al insertar el registro en la base de datos.');
         }
-        
+
+        // Desconecta la base de datos
         Desconectar($Con);
     } catch (Exception $e) {
-        print("<br><br>Se ha producido un error, favor de ingresar valores validos y que existan en la base de datos");
+        // Captura cualquier excepción y devuelve un mensaje de error
+        echo json_encode(['error' => $e->getMessage()]);
     }
 } else {
+    // Si la solicitud no es de tipo POST, devuelve un mensaje de error
     echo json_encode(["success" => false, "message" => "Método de solicitud no permitido"]);
 }
 ?>
