@@ -1,41 +1,101 @@
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
     margin: 0;
-    background-color: #f1f1f1;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-ul li {
-    position: relative;
-    display: inline-block;
-}
-
-ul li a {
-    display: block;
+/* Estilos de la barra de navegación */
+.navbar {
+    background-color: #4CA1FF;
     padding: 10px 20px;
-    text-decoration: none;
-    color: #333;
+    border-radius: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-ul ul {
+/* Estilo del logo/marca */
+.navbar .brand {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Estilos de la lista */
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+/* Estilos de los enlaces */
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 0px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: #357ABD;
+}
+
+/* Estilos para el dropdown */
+.navbar ul .dropdown {
+    position: relative;
+}
+
+.navbar ul .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: #4CA1FF;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    width: 200px; /* Ajusta el ancho según tus necesidades */
-    top: 100%; /* Coloca el submenú debajo del elemento padre */
-    left: 0; /* Coloca el submenú a la izquierda del elemento padre */
+    border-radius: 0px;
+    padding: 0;
+    margin: 0;
 }
 
-ul ul li {
+.navbar ul .dropdown-content li {
     display: block;
 }
 
-ul li:hover > ul {
+.navbar ul .dropdown-content li a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
     display: block;
+    border-radius: 0px;
+}
+
+.navbar ul .dropdown-content li a:hover {
+    background-color: #357ABD;
+}
+
+.navbar ul .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar ul li a {
+        padding: 10px;
+        text-align: center;
+    }
 }
