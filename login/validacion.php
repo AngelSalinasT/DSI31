@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     if ($Fila['bloqueo'] == 0) {
                         $_SESSION['loggedin'] = true;
                         $_SESSION['username'] = $usuario;
+                        $_SESSION['user_type'] = $Fila['tipo'];  // Establece el tipo de usuario en la sesión
                         if ($Fila['tipo'] == "U") {
                             header("Location: ../navbar/MenuUsuario.html");
                         } else {
