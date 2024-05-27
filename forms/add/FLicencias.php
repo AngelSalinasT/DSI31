@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+
+<?php
+    include("../../login/validar_A.php");
+?>
+
 <head>
     <meta charset="UTF-8">
     <title>Formulario de Licencias</title>
