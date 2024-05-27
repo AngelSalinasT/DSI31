@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulario</title>
-    <link rel="stylesheet" type="text/css" href="../../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../../css/stylelogin.css">
 </head>
 <body>
     <div class="container">

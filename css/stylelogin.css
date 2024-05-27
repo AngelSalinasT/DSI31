@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Simplifica&display=swap");
+
+* {
+    font-family: "Simplifica", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea el contenedor al inicio para evitar problemas de altura */
+    min-height: 100vh; /* Asegura que el body cubra al menos la altura de la ventana */
+    background-color: #004080;
+    margin: 0;
+    padding: 100px; /* Añade padding para que el contenido no esté pegado al borde */
+    
+}
+
+.container {
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0); /* Degradado de fondo */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input, .form-group select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.form-group input[type="file"] {
+    padding: 3px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #004080;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* webcam */
+.hidden {
+    display: none;
+}
+
+#preview {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+/* singnature */
+
+canvas {
+    border: 1px solid #000;
+    display: block;
+    margin-bottom: 10px;
+    
+}
+
+#video {
+    width: 300px; /* Ancho deseado */
+    height: 200px; /* Altura deseada */
+    object-fit: cover; /* Para mantener la proporción y llenar el área */
+    border: 1px solid #ccc; /* Opcional, para agregar un borde */
+    border-radius: 8px; /* Opcional, para bordes redondeados */
+}

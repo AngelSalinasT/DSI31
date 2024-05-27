@@ -1,101 +1,183 @@
-/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Simplifica&display=swap");
+
+* {
+    font-family: "Simplifica", sans-serif;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+}
+
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 
 /* Estilos de la barra de navegación */
 .navbar {
-    background-color: #4CA1FF;
-    padding: 10px 20px;
-    border-radius: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  background-color: #004080;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  height: 60px; /* Ajusta esta altura según sea necesario */
 }
 
 /* Estilo del logo/marca */
 .navbar .brand {
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
 }
 
 /* Estilos de la lista */
 .navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  height: 100%;
+  align-items: center;
 }
 
 /* Estilos de los enlaces */
+.navbar ul li {
+  height: 100%;
+}
+
 .navbar ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 0px;
-    transition: background-color 0.3s ease;
+  color: white;
+  text-decoration: none;
+  padding: 0 15px; /* Ajusta el padding horizontal según sea necesario */
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .navbar ul li a:hover {
-    background-color: #357ABD;
+  background-color: #0056b3;
 }
 
 /* Estilos para el dropdown */
 .navbar ul .dropdown {
-    position: relative;
+  position: relative;
+  height: 100%; /* Asegura que el dropdown tenga la misma altura */
+}
+
+.navbar ul .dropdown > a {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .navbar ul .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #4CA1FF;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 0px;
-    padding: 0;
-    margin: 0;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #004080;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 0px;
+  padding: 5px 0; /* Ajusta el padding vertical según sea necesario */
+  min-width: auto; /* Ajusta el ancho automático */
 }
 
 .navbar ul .dropdown-content li {
-    display: block;
+  display: block;
+  padding: 0;
+  margin: 0;
 }
 
 .navbar ul .dropdown-content li a {
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    display: block;
-    border-radius: 0px;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+  background-color: #004080; /* Mantén el fondo del dropdown */
+  white-space: nowrap; /* Evita que el texto se envuelva */
 }
 
 .navbar ul .dropdown-content li a:hover {
-    background-color: #357ABD;
+  background-color: #0056b3;
 }
 
-.navbar ul .dropdown:hover .dropdown-content {
-    display: block;
+.navbar ul .dropdown:hover > .dropdown-content {
+  display: block;
+}
+
+/* Sub-dropdown */
+.navbar ul .dropdown-content .sub-dropdown {
+  position: relative;
+}
+
+.navbar ul .dropdown-content .sub-dropdown-content {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #004080;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 0px;
+  padding: 5px 0; /* Ajusta el padding vertical según sea necesario */
+  min-width: auto; /* Ajusta el ancho automático */
+}
+
+.navbar ul .dropdown-content .sub-dropdown-content li {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar ul .dropdown-content .sub-dropdown-content li a {
+  background-color: #004080; /* Mantén el fondo del sub-dropdown */
+  padding: 10px 20px;
+  white-space: nowrap; /* Evita que el texto se envuelva */
+}
+
+.navbar ul .dropdown-content .sub-dropdown-content li a:hover {
+  background-color: #0056b3;
+}
+
+.navbar ul .dropdown-content .sub-dropdown:hover > .sub-dropdown-content {
+  display: block;
 }
 
 /* Responsivo */
 @media (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-    }
+  .navbar {
+    flex-direction: column;
+    height: auto;
+  }
 
-    .navbar ul {
-        flex-direction: column;
-        gap: 10px;
-    }
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+  }
 
-    .navbar ul li a {
-        padding: 10px;
-        text-align: center;
-    }
+  .navbar ul li {
+    height: auto;
+  }
+
+  .navbar ul li a {
+    padding: 10px;
+    text-align: center;
+    height: auto;
+  }
+
+  .navbar ul .dropdown-content,
+  .navbar ul .dropdown-content .sub-dropdown .sub-dropdown-content {
+    position: static;
+  }
+
+  .navbar ul .dropdown-content,
+  .navbar ul .dropdown-content .sub-dropdown .sub-dropdown-content {
+    min-width: 100%;
+    box-shadow: none;
+  }
 }
+
