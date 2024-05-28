@@ -11,6 +11,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $antiguedad = $_POST['ANTIGUEDAD'];
     $conductor = $_POST['CONDUCTOR'];
     $restricciones = $_POST['RESTRICCIONES'];
+    $pruebas = 0;
+
+    // Calcular la fecha de vencimiento
+    $fechaExpedicionDate = new DateTime($fechaExpedicion);
+    $fechaExpedicionDate->modify("+$vigencia years");
+    $vence = $fechaExpedicionDate->format('Y-m-d');
 
     // Verificación de la firma y la foto
     try {
@@ -41,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Prepara la consulta SQL para insertar los datos en la base de datos
         $SQL = "INSERT INTO licencias (NOLICENCIA, TIPO, FECHAEXPEDICION, VIGENCIA, ANTIGUEDAD, CONDUCTOR, RESTRICCIONES, firma, foto) 
-            VALUES ('$numeroLicencia', '$tipo', '$fechaExpedicion', '$vigencia', '$antiguedad', '$conductor', '$restricciones', '$firmaPath', '$fotoPath')";
+            VALUES ('$numeroLicencia', '$tipo', '$fechaExpedicion', '$vence', '$antiguedad', '$conductor', '$restricciones', '$firmaPath', '$fotoPath')";
 
         // Ejecuta la consulta SQL
         $Con = Conectar();
@@ -60,6 +66,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             // Si la consulta falla, lanza una excepción
             throw new Exception('Error al insertar el registro en la base de datos.');
+            $pruebas = 1;
+            echo json_encode('ERROR NO EXISTE ALGUN ATRIBUTO');
         }
 
         // Desconecta la base de datos

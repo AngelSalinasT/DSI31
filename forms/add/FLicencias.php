@@ -50,7 +50,7 @@
                 <legend>Fotografía</legend>
                 <div id="seccion-foto">
                     <video id="video" width="300" height="200" autoplay></video>
-                    <br>
+                    <br> 
                     <img id="preview" class="hidden" alt="Vista previa de la foto">
                     <canvas id="canvas" class="hidden" width="300" height="200"></canvas>
                     <br>
