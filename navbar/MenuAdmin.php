@@ -54,7 +54,7 @@
                     <li><a href="#" onclick="loadPage('../forms/delete/FDTenencias.php')">Tenencias</a></li>
                     <li><a href="#" onclick="loadPage('../forms/delete/FDVehiculos.php')">Vehiculos</a></li>
                     <li><a href="#" onclick="loadPage('../forms/delete/FDVerificaciones.php')">Verificaciones</a></li>
-                    <li><a href="#" onclick="loadPage('../forms/gestion de usuarios/eliminar.php')">Gestión de usuarios</a></li>
+                    
                 </ul>
             </li>
             <li class="dropdown">
@@ -98,6 +98,7 @@
                     <li><a href="#" onclick="loadPage('../forms/gestion de usuarios/activar.php')">Activar cuenta</a></li>
                     <li><a href="#" onclick="loadPage('../forms/gestion de usuarios/desactivar.php')">Desactivar cuenta</a></li>
                     <li><a href="#" onclick="loadPage('../forms/gestion de usuarios/bloquear.php')">Bloquear cuenta</a></li>
+                    <li><a href="#" onclick="loadPage('../forms/gestion de usuarios/eliminar.php')">Eliminar cuenta</a></li>
                     <li><a href="#" onclick="loadPage('../forms/gestion de usuarios/desbloquear.php')">Desbloquear cuenta</a></li>
                 </ul>
             </li>

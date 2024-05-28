@@ -17,7 +17,7 @@
         <form method="post" action="../../php forms/delete/DCentrosVerificacion.php">
             <label>Inserte el Id del Centro de Verificacion: </label>
             <input type="number" name="ID" id="ID">
-            <input type="submit">
+            <button type="submit">Eliminar</button>
         </form>
     </div>
 </body>

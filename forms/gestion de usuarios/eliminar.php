@@ -16,7 +16,7 @@
         <form method="post" action="../../php forms/delete/DUsers.php">
             <label>Inserte el Nombre de Usuario: </label>
             <input type="text" name="userName" id="userName">
-            <input type="submit">
+            <button type="submit">Eliminar</button>
         </form>
     </div>
 </body>

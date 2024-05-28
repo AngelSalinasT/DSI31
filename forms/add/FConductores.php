@@ -58,12 +58,6 @@
             
             <label>Fecha de nacimiento:</label>
             <input type="date" id="fechan" name="fechan"><br>
-
-            <label>Firma:</label>
-            <input type="file" id="firma" name="firma"><br>
-
-
-
             <br>
             <button type="submit">Enviar</button>
         </form>

@@ -75,7 +75,7 @@
             <input type="time" id="HORA" name="HORA"><br>
             
             <br>
-            <input type="submit">
+            <button type="submit">Enviar</button>
         </form>
     </div>
 </body>
