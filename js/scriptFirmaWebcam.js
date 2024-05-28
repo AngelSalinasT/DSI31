@@ -102,9 +102,7 @@ submit.addEventListener('click', (e) => {
             })
             .then(response => response.json())
             .then(data => {
-                if (data.error) {
-                    throw new Error(data.error);
-                }
+               
                 alert('Formulario enviado exitosamente.');
                 // Redirigir o mostrar mensaje de éxito
             })

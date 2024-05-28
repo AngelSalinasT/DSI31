@@ -1,6 +1,6 @@
 <?php
 include("../../controlador/controlador.php");
-include('../../login/validar.php');
+include('../../login/validar_A.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Datos recibidos del formulario

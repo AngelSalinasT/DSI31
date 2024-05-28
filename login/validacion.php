@@ -27,9 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $_SESSION['username'] = $usuario;
                         $_SESSION['user_type'] = $Fila['tipo'];  // Establece el tipo de usuario en la sesión
                         if ($Fila['tipo'] == "U") {
-                            header("Location: ../navbar/MenuUsuario.html");
+                            header("Location: ../navbar/MenuUsuario.php");
                         } else {
-                            header("Location: ../navbar/MenuAdmin.html");
+                            header("Location: ../navbar/MenuAdmin.php");
                         }
                     } else {
                         echo "Cuenta BLOQUEADA";

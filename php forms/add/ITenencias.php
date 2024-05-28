@@ -1,6 +1,6 @@
 <?php
     include("../../controlador/controlador.php");
-    include('../../login/validar.php');
+    include('../../login/validar_A.php');
 
     $folio = $_REQUEST['FOLIO'];
     $capturaPago = $_REQUEST['CAPTURAPAGO'];

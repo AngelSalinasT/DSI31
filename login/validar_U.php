@@ -8,7 +8,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
 if ($_SESSION['user_type'] !== 'U') {
     echo "Acceso denegado. No eres administrador. Redirigiendo...";
-    header('Location: ../../login/no_access.html');
+    header('Location: ../login/no_access.html');
     exit;
 }
 

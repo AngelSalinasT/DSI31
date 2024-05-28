@@ -1,7 +1,7 @@
 <?php
 
     include("../../controlador/controlador.php");
-    include('../../login/validar.php');
+    include('../../login/validar_A.php');
 
     $Nombre = $_GET['NOMBRE'];
     $Apellidos = $_GET['APELLIDOS'];

@@ -13,14 +13,14 @@
 <body>
     <div class="container">
         <h1>Formulario de Licencias</h1>
-        <form id="licenciaForm" method="POST" enctype="multipart/form-data">
+        <form id="licenciaForm" method="POST" enctype="multipart/form-data" action="../../php forms/add/IMultas.php" >
             <fieldset>
                 <legend>Información de la Licencia</legend>
                 <label for="NOLICENCIA">Número de Licencia:</label>
                 <input type="text" id="NOLICENCIA" name="NOLICENCIA" required><br>
 
                 <label for="TIPO">Tipo:</label>
-                <select id="TIPO" name="TIPO" required>
+                <select id="TIPO" name="TIPO" required> 
                     <option value="A">A</option>
                     <option value="B">B</option>
                     <option value="C">C</option>
