@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <?php
     include("../../login/validar_A.php");
@@ -7,21 +7,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliminar Dirección</title>
-    <!-- Enlace a tu archivo de estilos -->
+    <title>Eliminar Vehiculo</title>
     <link rel="stylesheet" type="text/css" href="../../css/styles.css">
 </head>
 <body>
-    <!-- Div de clase container para mantener el contenido centrado y con márgenes -->
     <div class="container">
+        <h1>ELIMINAR VEHÍCULO</h1>
         <form method="post" action="../../php forms/delete/DVehiculos.php">
-            <!-- Encabezado principal -->
-            <h1>ELIMINAR VEHÍCULO</h1>
-            <!-- Etiqueta y campo de entrada para el número de vehículo -->
             <label for="NUMSERIE">Inserte el número de Vehículo:</label>
-            <input type="number" name="NUMSERIE" id="NUMSERIE">
-            <!-- Botón de envío del formulario -->
+            <input type="text" id="NUMSERIE" name="NUMSERIE"><br>
+            <br>
+            <br>
             <button type="submit">Eliminar</button>
         </form>
     </div>

@@ -1,32 +1,33 @@
 <?php
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $IdPropietario = $_POST['ID'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $IdPropietario = $_POST['ID'];
 
-            include("../../controlador/controlador.php");
+    include("../../controlador/controlador.php");
 
-            try {
-                $Con = Conectar();
-                $checkSQL = "SELECT * FROM CENTROSVERIFICACION WHERE ID = '$IdPropietario'";
-                $checkResult = Ejecutar($Con, $checkSQL);
+    try {
+        $Con = Conectar();
 
-                if (mysqli_num_rows($checkResult) > 0) {
-                
-                    $SQL = "DELETE FROM CENTROSVERIFICACION WHERE ID = '$IdPropietario'";
-                    $ResultSet = Ejecutar($Con, $SQL);
+        // Verificar si existe el registro con el ID proporcionado
+        $checkSQL = "SELECT * FROM centrosverificacion WHERE ID = '$IdPropietario'";
+        $checkResult = Ejecutar($Con, $checkSQL);
 
-                    if ($ResultSet) {
-                        echo "<p style='color: green;'>REGISTRO ELIMINADO</p>";
-                    } else {
-                        echo "<p style='color: red;'>ERROR AL ELIMINAR EL REGISTRO</p>";
-                    }
-                } else {
-                  
-                    echo "<p style='color: red;'>NO SE ENCONTRÓ EL REGISTRO CON EL ID PROPORCIONADO</p>";
-                }
+        if (mysqli_num_rows($checkResult) > 0) {
+            // Eliminar el registro si existe
+            $SQL = "DELETE FROM centrosverificacion WHERE ID = '$IdPropietario'";
+            $ResultSet = Ejecutar($Con, $SQL);
 
-                Desconectar($Con);
-            } catch (mysqli_sql_exception $e) {
-                echo "<p style='color: red;'>ERROR: No se puede eliminar el registro debido a restricciones de clave foránea.</p>";
+            if ($ResultSet) {
+                echo "REGISTRO ELIMINADO";
+            } else {
+                echo "ERROR AL ELIMINAR EL REGISTRO";
             }
+        } else {
+            echo "NO SE ENCONTRÓ EL REGISTRO CON EL ID PROPORCIONADO";
         }
-        ?>
+
+        Desconectar($Con);
+    } catch (mysqli_sql_exception $e) {
+        echo "ERROR: No se puede eliminar el registro debido a restricciones de clave foránea.";
+    }
+}
+?>

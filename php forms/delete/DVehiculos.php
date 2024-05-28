@@ -6,11 +6,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['NUMSERIE'])) {
 
     $Con = Conectar();
 
-    $checkSQL = "SELECT * FROM VEHICULOS WHERE NUMSERIE = '$Id'";
+    $checkSQL = "SELECT * FROM vehiculos WHERE NUMSERIE = '$Id'";
     $checkResult = Ejecutar($Con, $checkSQL);
 
     if (mysqli_num_rows($checkResult) > 0) {
-        $SQL = "DELETE FROM VEHICULOS WHERE NUMSERIE = '$Id'";
+        $SQL = "DELETE FROM vehiculos WHERE NUMSERIE = '$Id'";
         $ResultSet = Ejecutar($Con, $SQL);
 
         if ($ResultSet) {

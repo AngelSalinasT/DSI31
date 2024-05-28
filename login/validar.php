@@ -11,5 +11,5 @@ if ($_SESSION['user_type'] !== 'A') {
     header('Location: ../../login/no_access.html');
     exit;
 }
-
+echo "Sesión iniciada correctamente. Bienvenido administrador.";
 ?>

@@ -9,43 +9,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Direcciones</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../css/styles.css">
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="mb-4">Formulario de Direcciones</h1>
-        <form method="post" action="IDirecciones.php">
-            <div class="form-group">
-                <label for="CALLE">Calle:</label>
-                <input type="text" class="form-control" id="CALLE" name="CALLE" required>
-            </div>
-
-            <div class="form-group">
-                <label for="NUMERO">Número:</label>
-                <input type="text" class="form-control" id="NUMERO" name="NUMERO" required>
-            </div>
-
-            <div class="form-group">
-                <label for="COLONIA">Colonia:</label>
-                <input type="text" class="form-control" id="COLONIA" name="COLONIA" required>
-            </div>
-
-            <div class="form-group">
-                <label for="MUNICIPIO">Municipio:</label>
-                <input type="text" class="form-control" id="MUNICIPIO" name="MUNICIPIO" required>
-            </div>
-
-            <div class="form-group">
-                <label for="CODIGOPOSTAL">Código Postal:</label>
-                <input type="number" class="form-control" id="CODIGOPOSTAL" name="CODIGOPOSTAL" required>
-            </div>
-
-            <div class="form-group">
-                <label for="ESTADO">Estado:</label>
-                <input type="text" class="form-control" id="ESTADO" name="ESTADO" required>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Enviar</button>
+    <div class="container">
+        <h1>Formulario de Direcciones</h1>
+        <form method="post" action="../../php forms/add/IDirecciones.php">
+            <label for="CALLE">Calle:</label>
+            <input type="text" id="CALLE" name="CALLE" required><br>
+            
+            <label for="NUMERO">Número:</label>
+            <input type="text" id="NUMERO" name="NUMERO" required><br>
+            
+            <label for="COLONIA">Colonia:</label>
+            <input type="text" id="COLONIA" name="COLONIA" required><br>
+            
+            <label for="MUNICIPIO">Municipio:</label>
+            <input type="text" id="MUNICIPIO" name="MUNICIPIO" required><br>
+            
+            <label for="CODIGOPOSTAL">Código Postal:</label>
+            <input type="number" id="CODIGOPOSTAL" name="CODIGOPOSTAL" required><br>
+            
+            <label for="ESTADO">Estado:</label>
+            <input type="text" id="ESTADO" name="ESTADO" required><br>
+            
+            <br>
+            <button type="submit">Enviar</button>
         </form>
     </div>
 </body>

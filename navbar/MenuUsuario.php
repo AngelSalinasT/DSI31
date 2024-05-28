@@ -27,24 +27,22 @@
             <li class="dropdown">
                 <a href="#">Consultas</a>
                 <ul class="dropdown-content">
-                    <li><a href="#" onclick="loadPage('../php forms/search/CCentrosVerificacion.php')">Centros
-                            Verificación</a></li>
+                    <li><a href="#" onclick="loadPage('../php forms/search/CCentrosVerificacion.php')">Centro Verificación</a></li>
                     <li><a href="#" onclick="loadPage('../php forms/search/CConductores.php')">Conductores</a></li>
                     <li><a href="#" onclick="loadPage('../php forms/search/CDirecciones.php')">Direcciones</a></li>
                     <li><a href="#" onclick="loadPage('../php forms/search/CLicencias.php')">Licencias</a></li>
                     <li><a href="#" onclick="loadPage('../php forms/search/CMultas.php')">Multas</a></li>
                     <li><a href="#" onclick="loadPage('../php forms/search/COficiales.php')">Oficiales</a></li>
                     <li><a href="#" onclick="loadPage('../php forms/search/CPropietarios.php')">Propietarios</a></li>
-                    <li><a href="#" onclick="loadPage('../php forms/search/CTarjetasCirculacion.php')">Tarjetas de
-                            Circulación</a></li>
+                    <li><a href="#" onclick="loadPage('../php forms/search/CTarjetasCirculacion.php')">Tarjetas de Circulación</a></li>
                     <li><a href="#" onclick="loadPage('../php forms/search/CTenencias.php')">Tenencias</a></li>
                     <li><a href="#" onclick="loadPage('../php forms/search/CVehiculos.php')">Vehiculos</a></li>
-                    <li><a href="#" onclick="loadPage('../php forms/search/CVerificaciones.php')">Verificaciones</a>
-                    </li>
+                    <li><a href="#" onclick="loadPage('../php forms/search/CVerificaciones.php')">Verificaciones</a></li>
                 </ul>
             </li>
+            <li><a href="../login/logout.php" class="logout">Logout</a></li>
         </ul>
-        <a href="../login/logout.php" class="logout">Logout</a>
+        
     </nav>
 
     <iframe id="contentFrame" src="" frameborder="0"></iframe>

@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <head>
     <title>Editar Centro de Verificación</title>
-    <link rel="stylesheet" href="updateEstilo.css">
+    <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
 
