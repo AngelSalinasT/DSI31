@@ -11,6 +11,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $antiguedad = $_POST['ANTIGUEDAD'];
     $conductor = $_POST['CONDUCTOR'];
     $restricciones = $_POST['RESTRICCIONES'];
+    $pruebas = 0;
+
+    // Calcular la fecha de vencimiento
+    $fechaExpedicionDate = new DateTime($fechaExpedicion);
+    $fechaExpedicionDate->modify("+$vigencia years");
+    $vence = $fechaExpedicionDate->format('Y-m-d');
 
     // Calcular la fecha de vencimiento
     $fechaExpedicionDate = new DateTime($fechaExpedicion);
@@ -65,6 +71,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             // Si la consulta falla, lanza una excepción
             throw new Exception('Error al insertar el registro en la base de datos.');
+            $pruebas = 1;
+            echo json_encode('ERROR NO EXISTE ALGUN ATRIBUTO');
         }
 
         // Desconecta la base de datos
