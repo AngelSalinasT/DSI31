@@ -67,8 +67,6 @@
                 <label for="fechaNac">Fecha de nacimiento</label>
                 <input type="date" id="fechan" name="fechan" value="<?php echo $Fila[11]; ?>">
 
-                <label for="firma">Firma</label>
-                <input type="file" id="firma" name="firma" value="<?php echo $Fila[12]; ?>">
 
                 <input type="hidden" id="id_conductor" name="id_conductor" value="<?php echo $id; ?>">
                 <button type="submit">Enviar</button>
@@ -89,10 +87,10 @@
         $NumEmer = $_POST['num_emer'];
         $Direccion = $_POST['direccion'];
         $FechaNac = $_POST['fechan'];
-        $firma = $_POST['firma'];         
+      
         $Con =  Conectar();
 
-        $SQL = "UPDATE conductores SET NOMBRE='$Nombre', APELLIDOS='$Apellidos', CURP='$Curp', TELEFONO='$Telefono', CORREO='$Correo', RFC='$Rfc', TIPOSANGRE='$TipoSangre', DONADORACTIVO='$DonadorActivo', NUMEMER='$NumEmer', DIRECCION='$Direccion', FECHANAC='$FechaNac', Firma='$firma' WHERE ID='$id';";
+        $SQL = "UPDATE conductores SET NOMBRE='$Nombre', APELLIDOS='$Apellidos', CURP='$Curp', TELEFONO='$Telefono', CORREO='$Correo', RFC='$Rfc', TIPOSANGRE='$TipoSangre', DONADORACTIVO='$DonadorActivo', NUMEMER='$NumEmer', DIRECCION='$Direccion', FECHANAC='$FechaNac' WHERE ID='$id';";
         $ResultSet = Ejecutar($Con,$SQL);
     }
 ?>

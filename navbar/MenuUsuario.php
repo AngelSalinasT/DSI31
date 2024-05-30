@@ -33,7 +33,7 @@
                     <li><a href="#" onclick="loadPage('../php forms/search/CLicencias.php')">Licencias</a></li>
                     <li><a href="#" onclick="loadPage('../php forms/search/CMultas.php')">Multas</a></li>
                     <li><a href="#" onclick="loadPage('../php forms/search/COficiales.php')">Oficiales</a></li>
-                    <li><a href="#" onclick="loadPage('../php forms/search/CPropietarios.php')">Propietarios</a></li>
+                    <li><a href="#" onclick="loadPage('../php forms/search/CPropietario.php')">Propietarios</a></li>
                     <li><a href="#" onclick="loadPage('../php forms/search/CTarjetasCirculacion.php')">Tarjetas de Circulación</a></li>
                     <li><a href="#" onclick="loadPage('../php forms/search/CTenencias.php')">Tenencias</a></li>
                     <li><a href="#" onclick="loadPage('../php forms/search/CVehiculos.php')">Vehiculos</a></li>

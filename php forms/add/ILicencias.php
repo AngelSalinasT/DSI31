@@ -12,6 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $conductor = $_POST['CONDUCTOR'];
     $restricciones = $_POST['RESTRICCIONES'];
 
+    // Calcular la fecha de vencimiento
+    $fechaExpedicionDate = new DateTime($fechaExpedicion);
+    $fechaExpedicionDate->modify("+$vigencia years");
+    $vence = $fechaExpedicionDate->format('Y-m-d');
+
     // Verificación de la firma y la foto
     try {
         if (!isset($_FILES['foto']) || !isset($_FILES['firma'])) {
@@ -41,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Prepara la consulta SQL para insertar los datos en la base de datos
         $SQL = "INSERT INTO licencias (NOLICENCIA, TIPO, FECHAEXPEDICION, VIGENCIA, ANTIGUEDAD, CONDUCTOR, RESTRICCIONES, firma, foto) 
-            VALUES ('$numeroLicencia', '$tipo', '$fechaExpedicion', '$vigencia', '$antiguedad', '$conductor', '$restricciones', '$firmaPath', '$fotoPath')";
+            VALUES ('$numeroLicencia', '$tipo', '$fechaExpedicion', '$vence', '$antiguedad', '$conductor', '$restricciones', '$firmaPath', '$fotoPath')";
 
         // Ejecuta la consulta SQL
         $Con = Conectar();

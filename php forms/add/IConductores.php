@@ -13,7 +13,6 @@
     $numEmergencia = $_REQUEST['NUMEMER'];
     $direccion = $_REQUEST['DIRECCION'];
     $fechaNac = $_REQUEST['fechan'];
-    $firma = $_REQUEST['firma'];
     
     print("Nombre: $nombre <br>");   
     print("Apellidos: $apellidos <br>");
@@ -26,9 +25,8 @@
     print("Número de Emergencia: $numEmergencia <br>");
     print("Dirección: $direccion <br>");   
     print("Fecha de nacimento: $fechaNac <br>");
-    print("Firma: $firma <br>"); 
 
-    $SQL = "INSERT INTO conductores (NOMBRE, APELLIDOS, CURP, TELEFONO, CORREO, RFC, TIPOSANGRE, DONADORACTIVO, NUMEMER, DIRECCION,FECHANAC,Firma) VALUES ('$nombre','$apellidos','$curp','$telefono','$correo','$rfc','$tipoSangre','$donadorActivo','$numEmergencia','$direccion','$fechaNac','$firma');";
+    $SQL = "INSERT INTO conductores (NOMBRE, APELLIDOS, CURP, TELEFONO, CORREO, RFC, TIPOSANGRE, DONADORACTIVO, NUMEMER, DIRECCION,FECHANAC) VALUES ('$nombre','$apellidos','$curp','$telefono','$correo','$rfc','$tipoSangre','$donadorActivo','$numEmergencia','$direccion','$fechaNac');";
     print($SQL); 
     
     try {

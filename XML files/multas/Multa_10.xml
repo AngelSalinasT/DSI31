@@ -1,0 +1,33 @@
+
+<Multa>
+    <Fecha>0001-12-31</Fecha>
+    <Hora>12:21:00</Hora>
+    <Folio>10</Folio>
+    <Velocimetro>189</Velocimetro>
+    <Carretera>federal 57</Carretera>
+    <Via>del swol</Via>
+    <Km>18</Km>
+    <Nombre>Paola</Nombre>
+    <Apellido>Piñon García</Apellido>
+    <Licencia>5YYTRFJ5</Licencia>
+    <Vehiculo>VW GOL</Vehiculo>
+    <Color>VERDE</Color>
+    <Modelo>2014</Modelo>
+    <Placas>DASDAS4</Placas>
+    <Infraccion>se mamo</Infraccion>
+    <Observaciones>n/a</Observaciones>
+    <ReporteSeccion>repo</ReporteSeccion>
+    <Fundamento>fun</Fundamento>
+    <Motivo>se mamo</Motivo>
+    <GarantiaRetenida>lise</GarantiaRetenida>
+    <NoParteAccidente>0</NoParteAccidente>
+    <Convenio>0</Convenio>
+    <PuestoDisposicion>0</PuestoDisposicion>
+    <DepositoOficial>0</DepositoOficial>
+    <ObservaOperativo>n/a</ObservaOperativo>
+    <ObservaConductor>1</ObservaConductor>
+    <CalificacionBoleta>0</CalificacionBoleta>
+    <Oficial>Daniel</Oficial>
+    <Firma>Captura de pantalla 2023-03-08 135827.png</Firma>
+    <FechaGeneracion>2024-05-29 20:51:19</FechaGeneracion>
+</Multa>
